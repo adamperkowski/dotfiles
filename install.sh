@@ -49,10 +49,10 @@ fi
 
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
 $SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
-    p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty rofi flameshot zsh-syntax-highlighting \
+    p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty flameshot zsh-syntax-highlighting \
     zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -R --noconfirm picom &> /dev/null    # remove possibly conflicting deps
-$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs emote git-extras > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
+$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs emote git-extras hyprlauncher-bin > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install vim-plug.${RC}"

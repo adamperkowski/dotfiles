@@ -31,9 +31,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags  mask  isfloating  monitor */
-	{ "floorp",           NULL,  NULL,  2,  0,  0 },
-	{ "firefox",          NULL,  NULL,  2,  0,  1 },
-	{ "thorium-browser",  NULL,  NULL,  2,  0,  0 },
+	{ "floorp",           NULL,  NULL,  2,     0,     0    },
+	{ "firefox",          NULL,  NULL,  2,     0,     1    },
+	{ "thorium-browser",  NULL,  NULL,  2,     0,     0    },
+	{ "hyprlauncher",     NULL,  NULL,  0,     1,     -1   },
 };
 
 /* layout(s) */
@@ -64,12 +65,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[] = { "kitty", NULL };
-static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
+static const char *launchcmd[] = { "hyprlauncher", NULL };
 static const char *flamcmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = roficmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = launchcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = flamcmd } },
 	{ MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
