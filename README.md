@@ -53,8 +53,7 @@ cd dwm
 #### To update, execute the following commands:
 
 ```bash
-cd $DWM_DIR
-./update.sh
+cd $DWM_DIR && ./update.sh
 ```
 
 You might need to re-run `./install.sh` after an update.
