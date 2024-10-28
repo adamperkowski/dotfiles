@@ -70,7 +70,7 @@ You might need to re-run `./install.sh` after an update.
 |Keybind|Description|
 |---|---|
 |`SUPER + RETURN`|Spawns `kitty` (terminal)|
-|`SUPER + SHIFT + RETURN`|Spawns `rofi` (application launcher)|
+|`SUPER + SHIFT + RETURN`|Spawns `hyprlauncher` (application launcher)|
 |`PRNTSCR`|Spawns `flameshot gui` (screenshot utility)|
 |`SUPER + DOWN` or `RIGHT`|Moves focus to previous window|
 |`SUPER + UP` or `LEFT`|Moves focus to next window|

@@ -73,11 +73,9 @@ mkdir "$XDG_CONFIG_HOME/kitty" &> /dev/null
 ln -sf "$DWM_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
-mkdir -p "$HOME/.local/share/rofi/themes" > /dev/null
-mkdir -p "$XDG_CONFIG_HOME/rofi/userconfig" > /dev/null
-ln -sf "$DWM_DIR/extra/rofi/catppuccin-mocha.rasi" "$HOME/.local/share/rofi/themes/catppuccin-mocha.rasi"
-ln -sf "$DWM_DIR/extra/rofi/userconfig.rasi" "$XDG_CONFIG_HOME/rofi/userconfig/config.rasi"
-ln -sf "$DWM_DIR/extra/rofi/config.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
+mkdir -p "$XDG_CONFIG_HOME/hyprlauncher"
+ln -sf "$DWM_DIR/extra/hyprlauncher/style.css" "$XDG_CONFIG_HOME/hyprlauncher/style.css"
+ln -sf "$DWM_DIR/extra/hyprlauncher/config.json" "$XDG_CONFIG_HOME/hyprlauncher/config.json"
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DWM_DIR/extra/n.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 
