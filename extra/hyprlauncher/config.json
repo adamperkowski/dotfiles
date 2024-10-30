@@ -1,13 +1,10 @@
 {
-  "width": 600,
-  "height": 600,
   "font_size": 14,
-  "max_results": 10,
+  "height": 600,
   "theme": {
     "background_color": "#1e1e2e",
-    "text_color": "#cdd6f4",
-    "selection_color": "#f38ba8"
+    "selection_color": "#f38ba8",
+    "text_color": "#cdd6f4"
   },
-  "search_enter_tooltip": true,
-  "search_finish_tooltop": true
+  "width": 600
 }
