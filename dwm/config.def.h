@@ -31,9 +31,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags  mask  isfloating  monitor */
-	{ "floorp",           NULL,  NULL,  2,     0,     0    },
+	{ "floorp",           NULL,  NULL,  2,     0,     1    },
 	{ "firefox",          NULL,  NULL,  2,     0,     1    },
-	{ "thorium-browser",  NULL,  NULL,  2,     0,     0    },
 	{ "hyprlauncher",     NULL,  NULL,  0,     1,     -1   },
 };
 
