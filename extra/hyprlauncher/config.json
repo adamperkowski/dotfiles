@@ -1,10 +1,47 @@
 {
-  "font_size": 14,
+  "anchor": "center",
   "height": 600,
+  "margin_bottom": 0,
+  "margin_left": 0,
+  "margin_right": 0,
+  "margin_top": 0,
+  "show_descriptions": false,
+  "show_icons": true,
+  "show_paths": true,
+  "show_search": true,
   "theme": {
-    "background_color": "#1e1e2e",
-    "selection_color": "#f38ba8",
-    "text_color": "#cdd6f4"
+    "colors": {
+      "item_bg": "#1e1e2e",
+      "item_bg_hover": "#181825",
+      "item_bg_selected": "#181825",
+      "item_description": "#a6adc8",
+      "item_name": "#cdd6f4",
+      "item_path": "#6c7086",
+      "search_bg": "#181825",
+      "search_bg_focused": "#181825",
+      "search_caret": "#89b4fa",
+      "search_text": "#cdd6f4",
+      "window_bg": "#1e1e2e"
+    },
+    "corners": {
+      "list_item": 8,
+      "search": 8,
+      "window": 12
+    },
+    "spacing": {
+      "item_margin": 6,
+      "item_padding": 4,
+      "search_margin": 12,
+      "search_padding": 12
+    },
+    "typography": {
+      "item_description_size": 12,
+      "item_name_size": 14,
+      "item_path_font_family": "monospace",
+      "item_path_size": 12,
+      "search_font_size": 16
+    }
   },
+  "vim_keys": true,
   "width": 600
 }
