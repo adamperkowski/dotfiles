@@ -1,3 +1,4 @@
+#! /bin/sh
 picom -b &
 hsetroot -solid "#1e1e2e" &
 # feh --bg-center ~/.images/windows-error.jpg &

@@ -50,9 +50,9 @@ fi
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
 $SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
     p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty flameshot zsh-syntax-highlighting \
-    zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
+    zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux emptty > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -R --noconfirm picom &> /dev/null    # remove possibly conflicting deps
-$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs emote git-extras hyprlauncher-bin > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
+$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git emote git-extras hyprlauncher-bin > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install vim-plug.${RC}"
@@ -83,8 +83,10 @@ ln -sf "$DWM_DIR/extra/tmux.conf" "$HOME/.tmux.conf"
 
 $SU chmod +x "$DWM_DIR/extra/xinitrc"
 ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
-$SU mkdir -p /etc/lemurs/wms > /dev/null
-$SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwm
+
+sed -i "s/Exec=\/home\/xx0a_q\/.xinitrc/Exec=\/home\/$USER\/.xinitrc/g" "$DWM_DIR/extra/dwm.desktop"
+$SU mkdir -p '/usr/share/xsessions'
+$SU ln -sf "$DWM_DIR/extra/dwm.desktop" '/usr/share/xsessions/dwm.desktop'
 
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
@@ -97,7 +99,7 @@ printf "%b\n" "${GREEN}Files linked.${RC}"
 printf "%b\n" "${YELLOW}Setting up dependencies...${RC}"
 $SU chsh -s /bin/zsh "$USER" > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to change default shell to ZSH.${RC}"
 $SU systemctl disable display-manager.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to disable display-manager.service.${RC}"
-$SU systemctl enable lemurs.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to enable lemurs.service.${RC}"
+$SU systemctl enable emptty.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to enable emptty.service.${RC}"
 nvim --headless -c 'PlugInstall' -c 'qa' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install neovim plugins.${RC}"
 cd "$HOME/.local/share/nvim/plugged/coc.nvim" && git apply "$DWM_DIR/extra/coc-nvim.diff" > /dev/null 2>&1 && cd - || printf "%b\n" "${RED}Failed to patch coc.nvim.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=dwm
+Exec=/home/xx0a_q/.xinitrc
+Icon=dwm
+Type=XSession
