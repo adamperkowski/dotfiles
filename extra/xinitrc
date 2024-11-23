@@ -5,13 +5,15 @@ hsetroot -solid "#1e1e2e" &
 emote &
 
 while true; do
+    cpu=$(cat /proc/stat | grep "cpu " | awk '{print 100 - ($5+$6+$7+$8)*100/($1+$2+$3+$4+$5+$6+$7+$8)}')
+    ram=$(free -m | awk 'NR==2{printf "%.2f%%\n", $3*100/$2 }')
     time=$(date "+%I:%M %p")
 
-    status="$time"
+    status="$cpu% :: $ram :: $time"
 
     xsetroot -name "$status"
 
-    sleep 1m
+    sleep 5s
 done &
 
 exec dwm
