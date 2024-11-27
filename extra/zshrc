@@ -73,5 +73,5 @@ function command_not_found_handler() {
 }
 
 function cd() {
-    { z "$@" 2>/dev/null && ls } || echo -e "Directory \e[91m$*\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO"
+    { z "$@" 2>/dev/null && ls && if [ -f 'Cargo.toml' ]; then; export CARGO_TARGET_DIR="/drv/$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[0].name')"; fi } || echo -e "Directory \e[91m$*\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO"
 }
