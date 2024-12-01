@@ -14,6 +14,8 @@ Plug 'mbbill/undotree'
 
 Plug 'lewis6991/gitsigns.nvim'
 
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 set number
@@ -88,8 +90,12 @@ EOF
 
 cnoreabbrev sudow SudaWrite
 
+imap <silent><script><expr> <M-Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 nnoremap <C-t> :Ex<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap J :m .+1<CR>==
 nnoremap K :m .-2<CR>==
 nnoremap <C-p> "_dP
+noremap q b

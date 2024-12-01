@@ -29,7 +29,7 @@ alias la="lsd -lahN --group-directories-first --color=auto"
 alias ll="lsd -llhN --group-directories-first --color=auto"
 
 alias ga="git add"
-alias gc="git commit --signoff -m"
+alias gc="git commit -m"
 alias gp="git push origin"
 alias gb="git branch"
 alias gpull="git pull origin"
