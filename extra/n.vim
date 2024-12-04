@@ -93,6 +93,10 @@ cnoreabbrev sudow SudaWrite
 imap <silent><script><expr> <M-Tab> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+nnoremap <leader>tc :tabnew<CR>
+nnoremap <leader>tn :tabnext<CR>
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>tq :tabclose<CR>
 nnoremap <C-t> :Ex<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap J :m .+1<CR>==
