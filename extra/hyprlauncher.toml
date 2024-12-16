@@ -65,6 +65,9 @@ enable_logging = false
 allow_invalid = false
 case_sensitive = false
 
+[calculator]
+enabled = false
+
 [web_search]
 enabled = true
 engine = "duckduckgo"

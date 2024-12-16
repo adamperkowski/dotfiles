@@ -1,19 +1,15 @@
 call plug#begin()
 
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-
 Plug 'nanotee/zoxide.vim'
-
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'windwp/nvim-autopairs'
 Plug 'wakatime/vim-wakatime'
 Plug 'lambdalisue/vim-suda'
-
+Plug 'julelang/jule.nvim'
 Plug 'mbbill/undotree'
-
 Plug 'lewis6991/gitsigns.nvim'
-
 Plug 'github/copilot.vim'
 
 call plug#end()
@@ -32,6 +28,10 @@ set expandtab
 let g:rustfmt_autosave = 1
 
 lua << EOF
+require("jule").setup {
+  format_on_save = true,
+}
+
 require("ibl").setup()
 require("nvim-autopairs").setup {}
 
@@ -99,7 +99,7 @@ nnoremap <leader>tp :tabprevious<CR>
 nnoremap <leader>tq :tabclose<CR>
 nnoremap <C-t> :Ex<CR>
 nnoremap <F5> :UndotreeToggle<CR>
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>
+nnoremap K :m .-2<CR>
 nnoremap <C-p> "_dP
 noremap q b
