@@ -1,7 +1,7 @@
 #! /bin/bash
 picom -b &
 hsetroot -solid "#1e1e2e" &
-xset r rate 180 60 &
+xset r rate 120 60 &
 # feh --bg-center ~/.images/windows-error.jpg &
 
 emote &

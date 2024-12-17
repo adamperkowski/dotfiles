@@ -3,11 +3,11 @@ call plug#begin()
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'nanotee/zoxide.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'windwp/nvim-autopairs'
 Plug 'wakatime/vim-wakatime'
 Plug 'lambdalisue/vim-suda'
-Plug 'julelang/jule.nvim'
+Plug 'julelang/jule.nvim', { 'branch': 'main' }
 Plug 'mbbill/undotree'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'github/copilot.vim'
