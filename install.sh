@@ -50,7 +50,7 @@ fi
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
 $SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
     p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty flameshot zsh-syntax-highlighting \
-    zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux emptty > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
+    zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux emptty rofi > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -R --noconfirm picom &> /dev/null    # remove possibly conflicting deps
 $AUR_HELPER -S --needed --noconfirm picom-ftlabs-git emote git-extras > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
@@ -78,6 +78,10 @@ ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/t
 mkdir -p "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DWM_DIR/extra/n.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
 ln -sf "$DWM_DIR/extra/tmux.conf" "$HOME/.tmux.conf"
+mkdir -p "$HOME/.local/share/rofi/themes"
+ln -sf "$DWM_DIR/extra/rofi-catppuccin.rasi" "$HOME/.local/share/rofi/themes/catppuccin.rasi"
+mkdir -p "$XDG_CONFIG_HOME/rofi"
+ln -sf "$DWM_DIR/extra/rofi.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
 
 $SU chmod +x "$DWM_DIR/extra/xinitrc"
 ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
