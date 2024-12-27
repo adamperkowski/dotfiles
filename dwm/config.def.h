@@ -34,7 +34,6 @@ static const Rule rules[] = {
 	{ "floorp",           NULL,  NULL,  2,     0,     0    },
 	{ "chromium",         NULL,  NULL,  2,     0,     0    },
 	{ "firefox",          NULL,  NULL,  2,     0,     0    },
-	{ "hyprlauncher",     NULL,  NULL,  0,     1,     -1   },
 };
 
 /* layout(s) */
@@ -65,7 +64,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[] = { "kitty", NULL };
-static const char *launchcmd[] = { "hyprlauncher", NULL };
+static const char *launchcmd[] = { "rofi", "-show", "drun", NULL };
 static const char *flamcmd[] = { "flameshot", "gui", NULL };
 
 static const Key keys[] = {
