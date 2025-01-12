@@ -11,6 +11,8 @@ Plug 'julelang/jule.nvim', { 'branch': 'main' }
 Plug 'mbbill/undotree'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'github/copilot.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
@@ -34,6 +36,7 @@ require("jule").setup {
 
 require("ibl").setup()
 require("nvim-autopairs").setup {}
+require'colorizer'.setup()
 
 require('gitsigns').setup {
   signs = {

@@ -50,6 +50,9 @@ Co-authored-by: $coauthor <${coauthor}@users.noreply.github.com>"
 }
 function gupdate-branch { git fetch "$1" main && git merge "$1"/main }
 
+function b64 { echo "$1" | base64 }
+function b64d { echo "$1" | base64 -d }
+
 alias db="distrobox"
 alias cp="cp -i"
 
