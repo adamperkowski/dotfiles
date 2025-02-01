@@ -1,5 +1,4 @@
-dwm
-dwm.c.*
+st
 *.o
 *-*
 *.tar.gz

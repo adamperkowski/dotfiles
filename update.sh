@@ -35,8 +35,10 @@ fi
 
 if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
     printf "%b\n" "${YELLOW}Saving user changes...${RC}"
-    cd "$DWM_DIR" || { printf "%b\n" "${RED}Failed to change directory to \$DWM_DIR.${RC}"; exit 1; }
-    git stash > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to stash the changes.${RC}"; exit 1; }
+    cd "$DWM_DIR" \
+        || { printf "%b\n" "${RED}Failed to change directory to \$DWM_DIR.${RC}"; exit 1; }
+    git stash > /dev/null 2>&1 \
+        || { printf "%b\n" "${RED}Failed to stash the changes.${RC}"; exit 1; }
     printf "%b\n" "${GREEN}Changes saved.${RC}"
 fi
 
@@ -60,7 +62,12 @@ printf "%b\n" "${GREEN}Variables configured."
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"
 cd "$DWM_DIR/dwm"
-rm -f config.h
-$SU make clean install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
+$SU make clean install > /dev/null 2>&1 \
+    || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
+
+printf "%b\n" "${YELLOW}Installing st...${RC}"
+cd "$DWM_DIR/st"
+$SU make clean install > /dev/null 2>&1 \
+    || { printf "%b\n" "${RED}Failed to install st.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"

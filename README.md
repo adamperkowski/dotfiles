@@ -45,7 +45,7 @@ The installation script is designed for a minimal <a href="https://wiki.archlinu
 > This might overwrite your existing dotfiles. Make sure to back everything up.
 
 ```bash
-git clone --depth 1 https://github.com/adamperkowski/dwm.git
+git clone --depth 1 https://github.com/adamperkowski/dwm.git -b dwm
 cd dwm
 ./install.sh
 ```
@@ -68,17 +68,17 @@ You might need to re-run `./install.sh` after an update.
 
 |Keybind|Description|
 |---|---|
-|`SUPER + RETURN`|Spawns `kitty` (terminal)|
-|`SUPER + SHIFT + RETURN`|Spawns `hyprlauncher` (application launcher)|
+|`SUPER + RETURN`|Spawns `st` (terminal)|
+|`SUPER + SHIFT + RETURN`|Spawns `rofi` (application launcher)|
 |`PRNTSCR`|Spawns `flameshot gui` (screenshot utility)|
-|`SUPER + DOWN` or `RIGHT`|Moves focus to previous window|
-|`SUPER + UP` or `LEFT`|Moves focus to next window|
-|`SUPER + SHIFT + UP` or `RIGHT`|Resizes selected window up or right|
-|`SUPER + SHIFT + DOWN` or `LEFT`|Resizes selected window down or left|
+|`SUPER + J` or `L`|Moves focus to previous window|
+|`SUPER + H` or `K`|Moves focus to next window|
+|`SUPER + SHIFT + J` or `L`|Resizes selected window up or right|
+|`SUPER + SHIFT + H` or `L`|Resizes selected window down or left|
 |`SUPER + LMB`|Drags selected window|
 |`SUPER + RMB`|Resizes selected window|
-|`SUPER + I`|Increases master window|
-|`SUPER + D`|Decreases master window|
+|`SUPER + I`|Increases master stack|
+|`SUPER + D`|Decreases master stack|
 |`SUPER + TAB`|Enters focus mode|
 |`SUPER + SHIFT + TAB`|Exits focus mode|
 |`SUPER + SHIFT + C`|Kills selected window|
@@ -90,8 +90,7 @@ You might need to re-run `./install.sh` after an update.
 |`SUPER + SHIFT + .`|Moves selected window to next monitor|
 |`SUPER + 1`-`9`|Moves focus to a tag `1`-`9`|
 |`SUPER + 0`|Shows all windows|
-|`SUPER + SHIFT + Q`|Kills dwm|
-|`SUPER + SHIFT + W`|Restarts dwm|
-|`CTRL + SHIFT + E`|Spawns `emote` picker|
+|`SUPER + SHIFT + Q`|Restarts dwm|
+|`SUPER + SHIFT + W`|Kills dwm|
 
 </div>

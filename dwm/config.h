@@ -63,7 +63,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[] = { "kitty", NULL };
+static const char *termcmd[] = { "st", NULL };
 static const char *launchcmd[] = { "rofi", "-show", "drun", NULL };
 static const char *flamcmd[] = { "flameshot", "gui", NULL };
 
@@ -78,10 +78,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Up,     setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Right,  setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Down,   setmfact,       {.f = -0.05} },
-	{ MODKEY|ShiftMask,             XK_Left,   setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_k,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_j,      setmfact,       {.f = -0.05} },
+	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY|ShiftMask,             XK_Tab,    setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_Tab,    setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
