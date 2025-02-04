@@ -1,6 +1,5 @@
 st
 *.o
-*-*
 *.tar.gz
 *.orig
 *.rej
