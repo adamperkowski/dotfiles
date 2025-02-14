@@ -82,8 +82,7 @@ ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" \
     "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
-mkdir -p "$XDG_CONFIG_HOME/nvim"
-ln -sf "$DWM_DIR/extra/n.vim" "$XDG_CONFIG_HOME/nvim/init.vim"
+ln -sf "$DWM_DIR/extra/nvim" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DWM_DIR/extra/tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.local/share/rofi/themes"
 ln -sf "$DWM_DIR/extra/rofi-catppuccin.rasi" "$HOME/.local/share/rofi/themes/catppuccin.rasi"
@@ -115,8 +114,6 @@ $SU systemctl enable emptty.service > /dev/null 2>&1 \
     || printf "%b\n" "${RED}Failed to enable emptty.service.${RC}"
 nvim --headless -c 'PlugInstall' -c 'qa' > /dev/null 2>&1 \
     || printf "%b\n" "${RED}Failed to install neovim plugins.${RC}"
-cd "$HOME/.local/share/nvim/plugged/coc.nvim" && git apply "$DWM_DIR/extra/coc-nvim.diff" \
-    > /dev/null 2>&1 && cd - || printf "%b\n" "${RED}Failed to patch coc.nvim.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"

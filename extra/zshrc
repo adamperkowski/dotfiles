@@ -62,7 +62,7 @@ function shreddir() { find "$1" -type f -exec shred -uvz {} \; rm -rf "$1" }
 function b64 { echo "$1" | base64 }
 function b64d { echo "$1" | base64 -d }
 
-function nv() { nvim -u $HOME/.config/nvim/init.vim "$@"; echo -ne "\e[6 q" }
+function nv() { nvim -u $HOME/.config/nvim/init.lua "$@"; echo -ne "\e[6 q" }
 
 function command_not_found_handler() {
     echo -e "Command \e[91m$1\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO" >&2

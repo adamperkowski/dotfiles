@@ -1,5 +1,5 @@
 #! /bin/bash
-picom -b &
+# picom -b &
 hsetroot -solid "#1e1e2e" &
 xset r rate 120 60 &
 # feh --bg-fill ~/Pictures/wallpapers/cyber-city.png &
