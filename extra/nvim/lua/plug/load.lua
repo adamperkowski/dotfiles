@@ -1,12 +1,7 @@
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
-Plug('julelang/jule.nvim')
-
 Plug('neovim/nvim-lspconfig')
-
-Plug('williamboman/mason.nvim')
-Plug('williamboman/mason-lspconfig.nvim')
 
 Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -26,5 +21,7 @@ Plug('norcalli/nvim-colorizer.lua')
 
 Plug('andweeb/presence.nvim')
 Plug('wakatime/vim-wakatime')
+
+Plug('julelang/jule.nvim', { ['branch'] = 'main' })
 
 vim.call('plug#end')

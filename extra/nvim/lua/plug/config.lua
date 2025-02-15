@@ -1,37 +1,9 @@
-vim.cmd.colorscheme "catppuccin"
-vim.g.undotree_SetFocusWhenToggle = true
-
-local cmp_nvim_lsp = require('cmp_nvim_lsp')
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
-vim.diagnostic.config {
-  signs = false,
-  virtual_text = {
-    virt_text_pos = 'right_align',
-    suffix = ' ',
+require('catppuccin').setup {
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    native_lsp = true
   }
-}
-
-local lspconfig = require('lspconfig')
-lspconfig.rust_analyzer.setup {
-  capabilities = capabilities
-}
-
-require('mason').setup {
-  ui = {
-    icons = {
-      package_installed = '',
-      package_pending = '󱍢',
-      package_uninstalled = '',
-    }
-  }
-}
-
-require('mason-lspconfig').setup {
-  ensure_installed = {
-    'rust_analyzer'
-  },
-  automatic_installation = true
 }
 
 local cmp = require('cmp')
@@ -45,13 +17,18 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping.confirm({ select = false }),
   },
   sources = {
+    { name = 'jule' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
   },
 }
 
-require('ibl').setup {}
+require('ibl').setup {
+  scope = {
+    enabled = false
+  }
+}
 require('nvim-autopairs').setup {}
 
 require('gitsigns').setup {
@@ -119,8 +96,12 @@ require('copilot').setup {
 }
 
 require('jule').setup {
-  format_on_save = true
+  format_on_save = true,
+  enable_cmp = true,
 }
+
+vim.cmd.colorscheme 'catppuccin'
+vim.g.undotree_SetFocusWhenToggle = true
 
 if vim.fn.has('persistent_undo') == 1 then
   local target_path = vim.fn.expand("~/.vim_undo")
