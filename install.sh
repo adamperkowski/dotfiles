@@ -72,7 +72,7 @@ printf "%b\n" "${YELLOW}Linking files...${RC}"
 DWM_DIR=$(pwd)
 
 if [ -z "$XDG_CONFIG_HOME" ]; then
-    mkdir "$HOME/.config" > /dev/null
+    mkdir "$HOME/.config" &> /dev/null
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
@@ -82,6 +82,7 @@ ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" \
     "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
+rm -rf "$XD_CONFIG_HOME/nvim" &> /dev/null
 ln -sf "$DWM_DIR/extra/nvim" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DWM_DIR/extra/tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.local/share/rofi/themes"
