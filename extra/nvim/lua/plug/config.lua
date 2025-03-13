@@ -92,6 +92,9 @@ require('copilot').setup {
     keymap = {
       accept = '<M-Tab>'
     }
+  },
+  filetypes = {
+    markdown = true
   }
 }
 

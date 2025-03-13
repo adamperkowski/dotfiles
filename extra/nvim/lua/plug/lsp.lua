@@ -48,3 +48,11 @@ lspconfig.lua_ls.setup {
     Lua = {}
   }
 }
+
+lspconfig.jsonls.setup {
+  capabilities = capabilities
+}
+
+lspconfig.yamlls.setup {
+  capabilities = capabilities
+}

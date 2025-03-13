@@ -3,6 +3,7 @@ require('plug.load')
 require('plug.lsp')
 require('plug.config')
 
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.g.rustfmt_autosave = 1
