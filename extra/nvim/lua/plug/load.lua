@@ -19,7 +19,7 @@ Plug('lewis6991/gitsigns.nvim')
 Plug('zbirenbaum/copilot.lua')
 Plug('norcalli/nvim-colorizer.lua')
 
-Plug('andweeb/presence.nvim')
+Plug('vyfor/cord.nvim')
 Plug('wakatime/vim-wakatime')
 
 Plug('julelang/jule.nvim', { ['branch'] = 'main' })

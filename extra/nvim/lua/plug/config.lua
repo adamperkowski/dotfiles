@@ -116,3 +116,10 @@ if vim.fn.has('persistent_undo') == 1 then
   vim.o.undodir = target_path
   vim.o.undofile = true
 end
+
+require('cord').setup {
+  display = {
+    theme = 'catppuccin',
+    flavor = 'dark',
+  }
+}
