@@ -114,7 +114,7 @@ $SU systemctl disable display-manager.service > /dev/null 2>&1 \
 $SU systemctl enable emptty.service > /dev/null 2>&1 \
     || printf "%b\n" "${RED}Failed to enable emptty.service.${RC}"
 nvim --headless -c 'PlugInstall' -c 'qa' > /dev/null 2>&1 \
-    || printf "%b\n" "${RED}Failed to install neovim plugins.${RC}"
+    || printf "%b\n" "${RED}Failed to install Neovim plugins.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"

@@ -70,4 +70,8 @@ cd "$DWM_DIR/st"
 $SU make clean install > /dev/null 2>&1 \
     || { printf "%b\n" "${RED}Failed to install st.${RC}"; exit 1; }
 
+printf "%b\n" "${YELLOW}Updating Neovim plugins...${RC}"
+nvim --headless -c 'PlugUpgrade' -c 'PlugUpdate' -c 'PlugClean' -c 'qa' > /dev/null 2>&1 \
+    || printf "%b\n" "${RED}Failed to update Neovim plugins.${RC}"
+
 printf "%b\n" "${GREEN}Done.${RC}"
