@@ -27,12 +27,18 @@
   "modules": [
     "break",
     {
-      "type": "title",
-      "format": "\u001b[31m                  xx0a_q @ lunix                   \u001b[0m"
+      "type": "custom",
+      "format": "\u001b[34m╭─────────────────────────────────────────────────╮\u001b[0m"
+    },
+    {
+      "type": "users",
+      "key": "User    ",
+      "keyIcon": " ",
+      "format": "{name}"
     },
     {
       "type": "custom",
-      "format": "\u001b[34m╭─────────────────────────────────────────────────╮\u001b[0m"
+      "format": "  \u001b[31m  Host\u001b[0m     : lunix"
     },
     {
       "type": "os",
@@ -67,52 +73,6 @@
     {
       "type": "terminal",
       "keyIcon": " "
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[34m╰─────────────────────────────────────────────────╯\u001b[0m"
-    },
-    {
-      "type": "custom",
-      "format": "       {#0}󰫢    {#0}{#37}󰫢    {#0}{#36}󰫢    {#0}{#35}󰫢    {#0}{#34}󰫢    {#0}{#33}󰫢    {#0}{#32}󰫢    {#0}{#31}󰫢        "
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[34m╭─────────────────────────────────────────────────╮\u001b[0m"
-    },
-    {
-      "type": "datetime",
-      "key": "Date    ",
-      "keyIcon": "󰃭 "
-    },
-    {
-      "type": "terminalfont",
-      "key": "Font    ",
-      "keyIcon": " "
-    },
-    {
-      "type": "gpu",
-      "key": "GPU     ",
-      "keyIcon": " ",
-      "format": "{2}"
-    },
-    {
-      "type": "theme",
-      "key": "Theme   ",
-      "keyIcon": "󰉼 ",
-      "format": "{2}"
-    },
-    {
-      "type": "disk",
-      "key": "Disk    ",
-      "keyIcon": " ",
-      "format": "{1} / {2} ({3})",
-      "showExternal": false
-    },
-    {
-      "type": "cursor",
-      "key": "Cursor  ",
-      "keyIcon": " "
     },
     {
       "type": "custom",

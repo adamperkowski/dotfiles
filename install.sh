@@ -54,7 +54,7 @@ $SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit 
     zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux emptty rofi \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -R --noconfirm picom &> /dev/null
-$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git git-extras \
+$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git git-extras kitget \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
     "" --unattended > /dev/null 2>&1 \

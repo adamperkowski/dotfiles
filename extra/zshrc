@@ -20,10 +20,17 @@ alias ip='ip -color=auto'
 alias ping='prettyping'
 
 alias sudo="sudo "
-alias ff="clear; fastfetch"
 alias ls="lsd -hN --group-directories-first --color=auto"
 alias la="lsd -lahN --group-directories-first --color=auto"
 alias ll="lsd -llhN --group-directories-first --color=auto"
+
+function ff() {
+    stamp="$(date +%s)"
+    kitget --square -o "/tmp/kitget-$stamp"
+    clear
+    fastfetch --kitty "/tmp/kitget-$stamp" "$@"
+    rm -f "/tmp/kitget-$stamp"
+}
 
 alias ga="git add"
 alias gc="git commit -m"
