@@ -48,13 +48,12 @@ else
 fi
 
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
-$SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xset \
-    xorg-xsetroot ttf-firacode-nerd pipewire p7zip noto-fonts noto-fonts-cjk \
-    noto-fonts-emoji ttf-nerd-fonts-symbols flameshot zsh-syntax-highlighting \
-    zsh-autosuggestions hsetroot zoxide gnupg git prettyping neovim npm tmux emptty rofi \
+$SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh \
+    ttf-firacode-nerd pipewire noto-fonts noto-fonts-cjk \
+    noto-fonts-emoji ttf-nerd-fonts-symbols zsh-syntax-highlighting \
+    zsh-autosuggestions zoxide gnupg git prettyping neovim npm emptty rofi \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
-$AUR_HELPER -R --noconfirm picom &> /dev/null
-$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git git-extras kitget \
+$AUR_HELPER -S --needed --noconfirm git-extras \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
     "" --unattended > /dev/null 2>&1 \
@@ -62,10 +61,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
     --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' \
     > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install vim-plug.${RC}"
-mkdir -p "$HOME/.config/tmux/plugins"
-git clone -b v2.1.1 https://github.com/catppuccin/tmux.git \
-    "$HOME/.config/tmux/plugins/catppuccin" \
-    > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install catppuccin for tmux.${RC}"
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
 
 printf "%b\n" "${YELLOW}Linking files...${RC}"
@@ -79,24 +74,14 @@ fi
 ln -sf "$DWM_DIR/extra/zshrc" "$HOME/.zshrc"
 mkdir "$XDG_CONFIG_HOME/fastfetch" &> /dev/null
 ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
-ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" \
     "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
 rm -rf "$XD_CONFIG_HOME/nvim" &> /dev/null
 ln -sf "$DWM_DIR/extra/nvim" "$XDG_CONFIG_HOME/nvim"
-ln -sf "$DWM_DIR/extra/tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.local/share/rofi/themes"
 ln -sf "$DWM_DIR/extra/rofi-catppuccin.rasi" "$HOME/.local/share/rofi/themes/catppuccin.rasi"
 mkdir -p "$XDG_CONFIG_HOME/rofi"
 ln -sf "$DWM_DIR/extra/rofi.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
-
-$SU chmod +x "$DWM_DIR/extra/xinitrc"
-ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
-
-sed -i "s/Exec=\/home\/xx0a_q\/.xinitrc/Exec=\/home\/$USER\/.xinitrc/g" \
-    "$DWM_DIR/extra/dwm.desktop"
-$SU mkdir -p '/usr/share/xsessions'
-$SU ln -sf "$DWM_DIR/extra/dwm.desktop" '/usr/share/xsessions/dwm.desktop'
 
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
@@ -116,11 +101,6 @@ $SU systemctl enable emptty.service > /dev/null 2>&1 \
 nvim --headless -c 'PlugInstall' -c 'qa' > /dev/null 2>&1 \
     || printf "%b\n" "${RED}Failed to install Neovim plugins.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
-
-printf "%b\n" "${YELLOW}Installing dwm...${RC}"
-cd "$DWM_DIR/dwm"
-$SU make clean install > /dev/null 2>&1 \
-    || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
 
 printf "%b\n" "${YELLOW}Installing st...${RC}"
 cd "$DWM_DIR/st"

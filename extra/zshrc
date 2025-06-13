@@ -81,3 +81,4 @@ function cd() {
 }
 
 ff #; tmux ls
+DWM_DIR=/home/adam/dwm
