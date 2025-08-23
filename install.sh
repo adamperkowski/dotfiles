@@ -53,7 +53,7 @@ $SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh \
     noto-fonts-emoji ttf-nerd-fonts-symbols zsh-syntax-highlighting \
     zsh-autosuggestions zoxide gnupg git prettyping neovim npm emptty rofi \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
-$AUR_HELPER -S --needed --noconfirm git-extras \
+$AUR_HELPER -S --needed --noconfirm zsh-autopair git-extras \
     > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
     "" --unattended > /dev/null 2>&1 \
