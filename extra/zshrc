@@ -61,6 +61,9 @@ alias cp="cp -i"
 alias system-upgrade="rm -rf ~/.cache/paru && sudo pacman -Scc --noconfirm; paru -Scc --noconfirm; paru --noconfirm; paru -Qq | grep '\-git' | paru -S --noconfirm -; rustup update"
 alias vencord-upgrade='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
+alias wt='clear; curl -s wttr.in | head -n7 | tail -n5; echo'
+alias wtt='clear; curl wttr.in'
+
 alias clipin="xsel --input --clipboard"
 alias clipout="xsel --output --clipboard"
 

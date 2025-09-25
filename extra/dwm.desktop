@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=dwm
-Exec=/home/xx0a_q/.xinitrc
+Exec=/home/adam/.xinitrc
 Icon=dwm
 Type=XSession

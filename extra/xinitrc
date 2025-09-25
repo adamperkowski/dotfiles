@@ -1,7 +1,5 @@
 #! /bin/bash
 
-exec i3
-
 # picom -b &
 hsetroot -solid "#1e1e2e" &
 xset r rate 120 60 &
