@@ -108,22 +108,22 @@ prompt_jnrowe_precmd () {
   if [ "${vcs_info_msg_0_}" = "" ]; then
     dir_status="%{$c1%}%n%{$c6%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${dir_status} ${ret_status}%{$reset_color%}
-%{$emoji%} '
+${emoji} '
   # modified, to be committed
   elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
     dir_status="%{$c1%}%n%{$c6%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}%{$30%} %{$bg_bold[red]%}%{$fg_bold[cyan]%}C%{$fg_bold[black]%}OMMIT%{$reset_color%}
 ${dir_status}%{$reset_color%}
-%{$emoji%} '
+${emoji} '
   elif [[ $(git diff --name-status 2>/dev/null ) != "" ]]; then
     dir_status="%{$c1%}%n%{$c6%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}%{$bg_bold[red]%}%{$fg_bold[blue]%}D%{$fg_bold[black]%}IRTY%{$reset_color%}
 ${dir_status}%{$reset_color%}
-%{$c6%}%{$emoji%}%{$c0%} '
+%{$c6%}${emoji}%{$c0%} '
   else
     dir_status="%{$c1%}%n%{$c6%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}
 ${dir_status}%{$reset_color%}
-%{$emoji%} '
+${emoji} '
   fi
 }
