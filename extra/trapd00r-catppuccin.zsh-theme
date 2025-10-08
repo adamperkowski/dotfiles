@@ -99,7 +99,7 @@ prompt_jnrowe_precmd () {
     emoji="😻"
   elif [[ $last_command == "sudo" ]]; then
     emoji="🙀"
-  elif (( last_status = 0 )); then
+  elif (( last_status == 0 )); then
     emoji="🐱"
   else
     emoji="😿"
