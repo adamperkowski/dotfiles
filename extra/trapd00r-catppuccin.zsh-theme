@@ -95,11 +95,11 @@ prompt_jnrowe_precmd () {
 
   vcs_info
 
-  if [[ $last_command == "cat" ]] || [[ $last_command == "head" ]] || [[ $last_command == "tail" ]]; then
+  if [[ $last_command == "cat" || $last_command == "head" || $last_command == "tail" ]]; then
     emoji="😻"
   elif [[ $last_command == "sudo" ]]; then
     emoji="🙀"
-  elif [[ $last_status -eq 0 ]]; then
+  elif (( last_status = 0 )); then
     emoji="🐱"
   else
     emoji="😿"

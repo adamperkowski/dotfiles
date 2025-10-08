@@ -33,7 +33,7 @@ else
     SAVE_USER_CHANGES=0
 fi
 
-if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
+if  (( SAVE_USER_CHANGES =  1 )); then
     printf "%b\n" "${YELLOW}Saving user changes...${RC}"
     cd "$DWM_DIR" \
         || { printf "%b\n" "${RED}Failed to change directory to \$DWM_DIR.${RC}"; exit 1; }
@@ -48,7 +48,7 @@ git reset --hard origin/dwm
 git pull --rebase origin dwm
 printf "%b\n" "${GREEN}Repository updated.${RC}"
 
-if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
+if (( SAVE_USER_CHANGES = 1 )); then
     printf "%b\n" "${YELLOW}Re-applying user changes...${RC}"
     git stash pop > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to pop the stash.${RC}"
     printf "%b\n" "${GREEN}Changes re-applied.${RC}"
