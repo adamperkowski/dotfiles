@@ -4,7 +4,6 @@
   imports = [ ./hardware.nix ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -26,18 +25,35 @@
     useXkbConfig = false;
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   users.users.adam = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    packages = with pkgs; [ chromium gh ];
+    packages = with pkgs; [
+      gh
+      spotify
+    ];
   };
 
   environment.systemPackages = with pkgs; [ htop ];
+
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    open = true;
+    nvidiaSettings = false;
+  };
 
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
+
+  programs.nano.enable = false;
 
   programs.gnupg.agent = {
     enable = true;
@@ -49,6 +65,14 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    remotePlay.openFirewall = true;
+  };
+
+  programs.gamemode.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

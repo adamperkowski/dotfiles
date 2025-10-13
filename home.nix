@@ -9,6 +9,8 @@ let
     nvim = "nvim";
   };
 in {
+  imports = [ ./theme.nix ];
+
   home.username = "adam";
   home.homeDirectory = "/home/adam";
   home.stateVersion = "25.05";
@@ -44,19 +46,23 @@ in {
       nixrs = "sudo nixos-rebuild switch";
     };
     initExtra = ''
-            function shreddir() {
-              find "$1" -type f -exec shred -uvz {} \; rm -rf "$1"
-            }
+function shreddir() {
+  find "$1" -type f -exec shred -uvz {} \; rm -rf "$1"
+}
 
-            function ff() {
-              kitget_output="/tmp/$(date +%s)"
-      	kitget --square -o "$kitget_output"
-      	clear
-      	fastfetch --kitty "$kitget_output" "$@"
-      	rm -f "$kitget_output"
-            }
+function nixpkgs-build() {
+  nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
+}
 
-            ff
+function ff() {
+  kitget_output="/tmp/$(date +%s)"
+  kitget --square -o "$kitget_output"
+  clear
+  fastfetch --kitty "$kitget_output" "$@"
+  rm -f "$kitget_output"
+}
+
+ff
     '';
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
@@ -73,7 +79,21 @@ in {
 
   programs.kitty = {
     enable = true;
+    themeFile = "Catppuccin-Mocha";
     font.name = "Fira Code Nerd Font";
+    extraConfig = ''
+      background #11111b
+    '';
+  };
+
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # Catppuccin Chrome Theme - Mocha
+      { id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin for Web File Explorer Icons
+      { id = "clngdbkpkpeebahjckkjfobafhncgmne"; } # Stylus
+      { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # Dark Reader
+    ];
   };
 
   programs.fastfetch = { enable = true; };
@@ -115,6 +135,7 @@ in {
   programs.vesktop = {
     enable = true;
     settings = {
+      arRPC = true;
       splashBackground = "#1e1e2e";
       splashColor = "#cdd6f4";
       splashTheming = true;
@@ -122,7 +143,7 @@ in {
     vencord.settings = {
       useQuickCss = true;
       themeLinks = [
-        "https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css"
+        "https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css"
         "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Themes/SettingsModal/SettingsModal.theme.css"
       ];
       plugins = {
@@ -213,6 +234,7 @@ in {
     prettyping
     # kitget
     lsd
+    hyprcursor
   ];
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {

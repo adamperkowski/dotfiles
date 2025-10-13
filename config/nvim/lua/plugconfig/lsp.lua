@@ -35,3 +35,7 @@ lspconfig.lua_ls.setup {
 		Lua = {},
 	},
 }
+
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities
+}

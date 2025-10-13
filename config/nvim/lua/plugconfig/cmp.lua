@@ -10,6 +10,7 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping.confirm { select = false },
   },
   sources = {
+    { name = "jule" },
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
