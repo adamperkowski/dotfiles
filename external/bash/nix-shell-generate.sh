@@ -15,14 +15,19 @@ function nix-shell-generate() {
 { pkgs ? import <nixpkgs> {} }:
 
 let
-  pkgInputs = with pkgs; [
+  mainPkg = if builtins.pathExists ./default.nix then pkgs.callPackage ./default.nix { } else { };
+
+  pkgInputs =
+    with pkgs;
+    [
 EOF
   } > /dev/null
 
-  echo "    $@" >> "$filename"
+  echo "      $@" >> "$filename"
 
   { tee -a "$filename" << EOF
-  ];
+  ]
+  ++ (mainPkg.nativeBuildInputs or [ ]);
 in
 pkgs.mkShell {
   packages = pkgInputs;
