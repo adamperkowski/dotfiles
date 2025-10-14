@@ -8,7 +8,8 @@ let
     hypr = "hypr";
     nvim = "nvim";
   };
-in {
+in
+{
   imports = [ ./theme.nix ];
 
   home.username = "adam";
@@ -23,8 +24,7 @@ in {
       cp = "cp -i";
       nv = ''nvim -u "$HOME/.config/nvim/init.lua"'';
       shred = "shred -uvz";
-      kitget =
-        "/home/adam/github/nixpkgs/pkgs/by-name/ki/kitget/result/bin/kitget";
+      kitget = "/home/adam/github/nixpkgs/pkgs/by-name/ki/kitget/result/bin/kitget";
 
       diff = "diff --color=auto";
       grep = "grep --color=auto";
@@ -40,29 +40,28 @@ in {
       gp = "git push origin";
       gb = "git branch";
       gpull = "git pull origin";
-      gmain =
-        "if ! git checkout --track origin/main; then if ! git checkout main; then git checkout master; fi; fi";
+      gmain = "if ! git checkout --track origin/main; then if ! git checkout main; then git checkout master; fi; fi";
 
       nixrs = "sudo nixos-rebuild switch";
     };
     initExtra = ''
-function shreddir() {
-  find "$1" -type f -exec shred -uvz {} \; rm -rf "$1"
-}
+      function shreddir() {
+        find "$1" -type f -exec shred -uvz {} \; rm -rf "$1"
+      }
 
-function nixpkgs-build() {
-  nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
-}
+      function nixpkgs-build() {
+        nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
+      }
 
-function ff() {
-  kitget_output="/tmp/$(date +%s)"
-  kitget --square -o "$kitget_output"
-  clear
-  fastfetch --kitty "$kitget_output" "$@"
-  rm -f "$kitget_output"
-}
+      function ff() {
+        kitget_output="/tmp/$(date +%s)"
+        kitget --square -o "$kitget_output"
+        clear
+        fastfetch --kitty "$kitget_output" "$@"
+        rm -f "$kitget_output"
+      }
 
-ff
+      ff
     '';
     profileExtra = ''
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
@@ -96,7 +95,9 @@ ff
     ];
   };
 
-  programs.fastfetch = { enable = true; };
+  programs.fastfetch = {
+    enable = true;
+  };
 
   programs.rofi = {
     enable = true;
