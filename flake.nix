@@ -16,22 +16,28 @@
       home-manager,
       ...
     }:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+
+      mkHost =
+        name:
+        lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./modules/base
+            ./systems/${name}
+            home-manager.nixosModules.home-manager
+            ./modules/home
+          ];
+        };
+    in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "bak";
-              users.adam = import ./home.nix;
-            };
-          }
-        ];
+      nixosConfigurations = {
+        desktop = mkHost "desktop";
+        laptop = mkHost "laptop";
       };
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
     };
 }
