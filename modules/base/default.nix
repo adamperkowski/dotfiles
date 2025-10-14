@@ -21,6 +21,18 @@
     useXkbConfig = false;
   };
 
+  age = {
+    secrets = {
+      chromium = {
+        file = ../../secrets/chromium.sh.age;
+        owner = "adam";
+        group = "users";
+        mode = "0500";
+        path = "/home/adam/.local/bin/chromium";
+      };
+    };
+  };
+
   users.users.adam = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -32,13 +44,32 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ htop ];
+  environment = {
+    localBinInPath = true;
+    systemPackages = with pkgs; [ htop ];
+  };
 
   programs.nano.enable = false;
 
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+  };
+
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+    hostKeys = [
+      {
+        path = "/home/adam/.ssh/id_ed25519";
+        type = "ed25519";
+      }
+    ];
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      PubkeyAuthentication = true;
+    };
   };
 
   programs.gnupg.agent = {

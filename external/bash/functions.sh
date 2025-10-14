@@ -3,7 +3,7 @@ function shreddir() {
 }
 
 function nixrs() {
-  sudo nixos-rebuild switch --flake "~/dotfiles#$(hostname)"
+  sudo nixos-rebuild switch --flake ~/dotfiles\#$(hostname)
 }
 
 function nixpkgs-build() {

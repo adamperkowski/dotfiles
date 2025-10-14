@@ -7,6 +7,11 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -14,6 +19,7 @@
       self,
       nixpkgs,
       home-manager,
+      agenix,
       ...
     }:
     let
@@ -28,6 +34,7 @@
             ./modules/base
             ./systems/${name}
             home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
             ./modules/home
           ];
         };
