@@ -7,6 +7,8 @@ let
   configs = {
     hypr = "hypr";
     nvim = "nvim";
+    fastfetch = "fastfetch";
+    lsd = "lsd";
   };
 in
 {

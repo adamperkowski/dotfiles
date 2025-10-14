@@ -14,6 +14,8 @@
   home.packages = with pkgs; [
     nerd-fonts.fira-code
     prettyping
+    fastfetch
+    jq
     # kitget
     lsd
     hyprcursor
