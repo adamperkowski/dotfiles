@@ -10,6 +10,8 @@ function nixpkgs-build() {
   nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
 }
 
+. "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/nix-shell-generate.sh"
+
 function ff() {
   kitget_output="/tmp/$(date +%s)"
   kitget --square -o "$kitget_output"
