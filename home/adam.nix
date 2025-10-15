@@ -18,6 +18,11 @@
     jq
     # kitget
     lsd
+    hyprpaper
     hyprcursor
+    wl-clipboard
+    playerctl
+    grim
+    slurp
   ];
 }

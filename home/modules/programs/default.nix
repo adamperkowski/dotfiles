@@ -7,6 +7,8 @@
     ./neovim.nix
 
     ./rofi.nix
+    ./waybar.nix
+
     ./chromium.nix
   ];
 }

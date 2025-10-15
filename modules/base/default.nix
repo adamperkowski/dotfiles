@@ -35,7 +35,9 @@
 
   users.users.adam = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+    ];
     packages = with pkgs; [
       gh
       spotify
