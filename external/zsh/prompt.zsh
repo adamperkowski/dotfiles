@@ -31,7 +31,7 @@ function precmd() {
 
   local baseprompt="${reset}${dim}%n${reset}${accent}@${reset}${dim}%m${reset}:${accent}%l${reset} ${dim}->${reset} ${cwd} ${dim}(${reset}%?${dim})${reset}${newline}"
 
-  if [[ "$last_command" == 'cat' || "$last_command" == 'head' || "$last_command" == 'tail' || "$last_command" == 'tac' || "$last_command" == 'nc' || "$last_command" == 'ncat' || "$last_command" == 'netcat' ]]; then
+  if [[ "$last_command" == 'cat' || "$last_command" == 'head' || "$last_command" == 'tail' || "$last_command" == 'tac' || "$last_command" == 'nc' || "$last_command" == 'ncat' || "$last_command" == 'netcat' || "$last_command" == 'kitget' ]]; then
     baseprompt+='😻'
   elif [[ "$last_command" == 'sudo' ]]; then
     baseprompt+='🙀'
@@ -43,13 +43,22 @@ function precmd() {
 
   baseprompt+=' '
 
+  if [[ -n "$IN_NIX_SHELL" ]]; then
+    local nix_shell="${accent}󱄅 ${reset}"
+  fi
+
   if [[ -z "$vcs_info_msg_0_" ]]; then
-    PROMPT="${baseprompt}"
+    if [[ -n "$nix_shell" ]]; then
+      echo "hello"
+      PROMPT="${nix_shell}${newline}${baseprompt}"
+    else
+      PROMPT="${baseprompt}"
+    fi
   elif [[ -n "$(git diff --cached --name-status 2>/dev/null)" ]]; then
-    PROMPT="${vcs_info_msg_0_}${reset} COMMIT ${newline}${baseprompt}"
+    PROMPT="${vcs_info_msg_0_}${reset} COMMIT ${nix_shell} ${newline}${baseprompt}"
   elif [[ -n "$(git diff --name-status 2>/dev/null)" ]]; then
-    PROMPT="${vcs_info_msg_0_}${reset} DIRTY ${newline}${baseprompt}"
+    PROMPT="${vcs_info_msg_0_}${reset} DIRTY ${nix_shell} ${newline}${baseprompt}"
   else
-    PROMPT="${vcs_info_msg_0_}${newline}${baseprompt}"
+    PROMPT="${vcs_info_msg_0_} ${nix_shell}${newline}${baseprompt}"
   fi
 }

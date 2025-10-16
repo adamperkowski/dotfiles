@@ -13,6 +13,11 @@ function nixpkgs-build() {
 . "$DOTFILES/external/zsh/nix-shell-generate.zsh"
 
 function ff() {
+  if [ -n "$FF_SKIP" ]; then
+    FF_SKIP=
+    return
+  fi
+
   if [ -n "$FF_NO_KITGET" ]; then
     fastfetch --logo nixos_small --logo-padding-top 3 "$@"
     return

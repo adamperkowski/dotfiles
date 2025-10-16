@@ -36,6 +36,16 @@ lspconfig.lua_ls.setup {
 	},
 }
 
+lspconfig.nixd.setup {
+  capabilities = capabilities
+}
+
 lspconfig.rust_analyzer.setup {
+  capabilities = capabilities
+}
+
+lspconfig.bashls.setup {
+  filetypes = { "sh", "bash", "zsh" },
+
   capabilities = capabilities
 }

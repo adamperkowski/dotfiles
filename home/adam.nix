@@ -27,6 +27,9 @@
     grim
     slurp
 
+    nixd
+    bash-language-server
+
     unstable.kitget
   ];
 }

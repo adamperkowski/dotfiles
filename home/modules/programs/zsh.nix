@@ -29,6 +29,8 @@
       nv = ''nvim -u "$HOME/.config/nvim/init.lua"'';
       shred = "shred -uvz";
 
+      nixdev = "FF_SKIP=1 nix develop -c zsh";
+
       diff = "diff --color=auto";
       grep = "grep --color=auto";
       ip = "ip -color=auto";
