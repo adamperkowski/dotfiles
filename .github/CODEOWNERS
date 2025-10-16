@@ -1,2 +1,2 @@
 * @adamperkowski
-external/bash/nix-shell-generate.sh @Sebaguardian
+external/zsh/nix-shell-generate.zsh @Sebaguardian

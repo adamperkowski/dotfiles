@@ -1,9 +1,11 @@
 { pkgs, ... }:
 
 {
-  home.username = "adam";
-  home.homeDirectory = "/home/adam";
-  home.stateVersion = "25.05";
+  home = {
+    username = "adam";
+    homeDirectory = "/home/adam";
+    stateVersion = "25.05";
+  };
 
   imports = [
     ./modules/theme.nix
