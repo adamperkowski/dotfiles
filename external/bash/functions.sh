@@ -14,7 +14,7 @@ function nixpkgs-build() {
 
 function ff() {
   kitget_output="/tmp/$(date +%s)"
-  kitget --square -o "$kitget_output"
+  kitget --square -o "$kitget_output" > /dev/null
   fastfetch --kitty "$kitget_output" "$@"
   rm -f "$kitget_output"
 }

@@ -12,17 +12,19 @@
   ];
 
   home.packages = with pkgs; [
-    nerd-fonts.fira-code
     prettyping
     fastfetch
-    jq
-    # kitget
+    playerctl
     lsd
+    jq
+
+    nerd-fonts.fira-code
+    wl-clipboard
     hyprpaper
     hyprcursor
-    wl-clipboard
-    playerctl
     grim
     slurp
+
+    unstable.kitget
   ];
 }

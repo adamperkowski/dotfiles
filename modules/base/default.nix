@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, nixpkgs-unstable, ... }:
 
 {
   boot = {
@@ -44,7 +41,17 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        unstable = import nixpkgs-unstable {
+          system = prev.stdenv.hostPlatform.system;
+          config = prev.config;
+        };
+      })
+    ];
+  };
 
   environment = {
     localBinInPath = true;
