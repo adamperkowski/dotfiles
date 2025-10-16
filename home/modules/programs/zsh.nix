@@ -53,6 +53,8 @@
     '';
 
     initContent = ''
+      export GPG_TTY=$(tty)
+
       . "$DOTFILES/external/zsh/prompt.zsh"
       . "$DOTFILES/external/zsh/functions.zsh"
 
