@@ -65,7 +65,8 @@
     {
       "type": "uptime",
       "key": "uptime  ",
-      "keyIcon": " "
+      "keyIcon": " ",
+      "format": "{days}d {hours}h {minutes}m"
     },
     {
       "type": "shell",

@@ -32,6 +32,8 @@
 
   users.users.adam = {
     isNormalUser = true;
+    shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
     extraGroups = [
       "wheel"
     ];

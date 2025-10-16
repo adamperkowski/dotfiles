@@ -1,12 +1,11 @@
 {
   imports = [
     ./git.nix
-
-    ./bash.nix
-    ./kitty.nix
+    ./zsh.nix
     ./neovim.nix
 
     ./rofi.nix
+    ./kitty.nix
     ./waybar.nix
 
     ./chromium.nix
