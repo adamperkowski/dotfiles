@@ -23,8 +23,6 @@
     ];
 
     shellAliases = {
-      sudo = "sudo ";
-
       cp = "cp -i";
       nv = ''nvim -u "$HOME/.config/nvim/init.lua"'';
       shred = "shred -uvz";

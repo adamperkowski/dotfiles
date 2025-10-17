@@ -39,18 +39,18 @@
       "format": "{name}"
     },
     {
-      "type": "os",
-      "key": "distro  ",
-      "keyIcon": " ",
-      "format": "{name} {version-id}"
-    },
-    {
       "type": "command",
       "shell": "/bin/sh",
       "text": "hostname",
       "key": "hostname",
       "keyIcon": " ",
       "format": "{result}"
+    },
+    {
+      "type": "os",
+      "key": "distro  ",
+      "keyIcon": " ",
+      "format": "{name} {version-id}"
     },
     {
       "type": "kernel",

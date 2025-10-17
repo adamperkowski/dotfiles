@@ -11,7 +11,7 @@ function nixpkgs-build() {
 }
 
 function cd() {
-  { z "$@" 2>/dev/null && ls; } || echo "dir \e[91m$*\e[0m not found!! \e[91mSTUPID! BONK!\e[0m :3"
+  { z "$@" 2>/dev/null && lsd -hN; } || echo "dir \e[91m$*\e[0m not found!! \e[91mSTUPID! BONK!\e[0m :3"
 }
 
 function command_not_found_handler() {
