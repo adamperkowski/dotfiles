@@ -10,5 +10,6 @@
     ./waybar.nix
 
     ./chromium.nix
+    ./spicetify.nix
   ];
 }

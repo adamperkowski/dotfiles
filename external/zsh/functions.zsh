@@ -6,8 +6,22 @@ function nixrs() {
   sudo nixos-rebuild switch --flake ~/dotfiles\#$(hostname)
 }
 
+function nixdev() {
+  export FF_SKIP=1
+
+  if [ $(nix flake show | grep 'devShells') ]; then
+    nix develop -c zsh
+  else
+    nix-shell --run zsh
+  fi
+}
+
 function nixpkgs-build() {
   nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
+}
+
+function nixpkgs-review-gha() {
+  gh workflow run 'review.yml' -R "$(gh api user --jq '.login')/nixpkgs-review-gha" -f pr="$1"
 }
 
 function cd() {

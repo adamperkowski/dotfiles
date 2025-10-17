@@ -27,8 +27,6 @@
       nv = ''nvim -u "$HOME/.config/nvim/init.lua"'';
       shred = "shred -uvz";
 
-      nixdev = "FF_SKIP=1 nix develop -c zsh";
-
       diff = "diff --color=auto";
       grep = "grep --color=auto";
       ip = "ip -color=auto";
@@ -38,10 +36,14 @@
       la = "lsd -lahN";
       ll = "lsd -llhN";
 
+      gap = "git add --patch";
       ga = "git add";
       gc = "git commit --edit -S";
       gp = "git push origin";
       gb = "git branch";
+      gl = "git log";
+      gd = "git diff";
+      gco = "git checkout";
       gpull = "git pull origin";
       gmain = "if ! git checkout --track origin/main; then if ! git checkout main; then git checkout master; fi; fi";
     };
@@ -53,6 +55,7 @@
     initContent = ''
       export GPG_TTY=$(tty)
 
+      . "$DOTFILES/external/zsh/keymap.zsh"
       . "$DOTFILES/external/zsh/prompt.zsh"
       . "$DOTFILES/external/zsh/functions.zsh"
 

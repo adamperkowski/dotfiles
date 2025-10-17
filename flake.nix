@@ -4,10 +4,17 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix = {
+      url = "github:adamperkowski/spicetify-nix/8beb68c4444294a91220c4cea4772fdc388877b9";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,11 +26,9 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
       home-manager,
-      agenix,
       ...
-    }:
+    }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -31,17 +36,12 @@
       mkHost =
         name:
         lib.nixosSystem {
-          inherit system;
-
-          specialArgs = {
-            inherit nixpkgs-unstable;
-          };
+          specialArgs = { inherit inputs; };
 
           modules = [
             ./modules/base
             ./systems/${name}
             home-manager.nixosModules.home-manager
-            agenix.nixosModules.default
             ./modules/home
           ];
         };

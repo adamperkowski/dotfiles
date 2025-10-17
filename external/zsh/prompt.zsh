@@ -1,3 +1,6 @@
+export LS_COLORS=$(/run/current-system/sw/bin/dircolors -b)
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 autoload -Uz vcs_info
 
 setopt nopromptsubst
@@ -49,7 +52,6 @@ function precmd() {
 
   if [[ -z "$vcs_info_msg_0_" ]]; then
     if [[ -n "$nix_shell" ]]; then
-      echo "hello"
       PROMPT="${nix_shell}${newline}${baseprompt}"
     else
       PROMPT="${baseprompt}"

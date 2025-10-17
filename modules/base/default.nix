@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-unstable, ... }:
+{ pkgs, inputs, ... }:
 
 {
   boot = {
@@ -18,18 +18,6 @@
     useXkbConfig = false;
   };
 
-  age = {
-    secrets = {
-      chromium = {
-        file = ../../secrets/chromium.sh.age;
-        owner = "adam";
-        group = "users";
-        mode = "0500";
-        path = "/home/adam/.local/bin/chromium";
-      };
-    };
-  };
-
   users.users.adam = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -39,7 +27,6 @@
     ];
     packages = with pkgs; [
       gh
-      spotify
     ];
   };
 
@@ -47,7 +34,7 @@
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        unstable = import nixpkgs-unstable {
+        unstable = import inputs.nixpkgs-unstable {
           system = prev.stdenv.hostPlatform.system;
           config = prev.config;
         };
