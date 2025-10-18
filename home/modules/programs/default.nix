@@ -9,6 +9,7 @@
     ./kitty.nix
     ./waybar.nix
 
+    ./vesktop.nix
     ./chromium.nix
     ./spicetify.nix
   ];

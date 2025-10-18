@@ -28,5 +28,4 @@
   };
 
   programs.gamemode.enable = true;
-
 }
