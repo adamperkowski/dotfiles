@@ -1,0 +1,27 @@
+name: Nix Checks
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  lints:
+    name: Lints
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Check Formatting
+        run: |
+          nix fmt
+          if [ -n "$(git status --porcelain)" ]; then
+            git --no-pager diff
+            exit 1
+          fi
+
+      - name: Check Flake Evaluation
+        run: nix flake check
