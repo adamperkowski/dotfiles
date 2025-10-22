@@ -2,6 +2,7 @@
   programs.chromium = {
     enable = true;
     extensions = [
+      { id = "fgmjlmbojbkmdpofahffgcpkhkngfpef"; } # Startpage
       { id = "bgnkhhnnamicmpeenaelnjfhikgbkllg"; } # AdGuard AdBlocker
       { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # Catppuccin Chrome Theme - Mocha
       { id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin for Web File Explorer Icons
