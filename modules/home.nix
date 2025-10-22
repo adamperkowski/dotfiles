@@ -10,6 +10,6 @@ in
     useUserPackages = true;
     backupFileExtension = "bak";
     extraSpecialArgs = { inherit agenix spicetify-nix; };
-    users.adam = import ../../home/adam.nix;
+    users.adam = import ../home/adam.nix;
   };
 }

@@ -10,6 +10,7 @@
   imports = [
     ./modules/age.nix
     ./modules/theme.nix
+    ./modules/wallpaper.nix
     ./modules/dotfiles.nix
     ./modules/programs
   ];

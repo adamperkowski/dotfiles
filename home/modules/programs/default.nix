@@ -7,6 +7,7 @@
 
     ./rofi.nix
     ./kitty.nix
+    ./dunst.nix
     ./waybar.nix
 
     ./vesktop.nix

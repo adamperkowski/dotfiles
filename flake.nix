@@ -39,10 +39,10 @@
           specialArgs = { inherit inputs; };
 
           modules = [
-            ./modules/base
+            ./modules/base.nix
             ./systems/${name}
             home-manager.nixosModules.home-manager
-            ./modules/home
+            ./modules/home.nix
           ];
         };
     in
