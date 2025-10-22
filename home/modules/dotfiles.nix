@@ -5,7 +5,7 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   configs = {
-    hypr = "hypr";
+    niri = "niri";
     nvim = "nvim";
     fastfetch = "fastfetch";
     lsd = "lsd";

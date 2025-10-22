@@ -14,7 +14,10 @@ in
         position = "top";
         width = 1920;
 
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "niri/workspaces"
+        ];
         modules-center = [ "custom/music" ];
         modules-right = [
           "tray"
@@ -23,6 +26,12 @@ in
         ];
 
         "hyprland/workspaces" = {
+          disable-scroll = true;
+          sort-by-name = true;
+          format = "  ";
+        };
+
+        "niri/workspaces" = {
           disable-scroll = true;
           sort-by-name = true;
           format = " {icon} ";
