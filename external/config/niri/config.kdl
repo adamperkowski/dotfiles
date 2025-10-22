@@ -1,3 +1,16 @@
+spawn-at-startup "swww img ~/.wallpaper.jpg"
+spawn-at-startup "waybar"
+spawn-at-startup "vesktop"
+
+screenshot-path "~/screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+prefer-no-csd
+
+cursor {
+  xcursor-theme "catppuccin-mocha-dark-cursors"
+  xcursor-size 24
+}
+
 input {
   keyboard {
     xkb {
@@ -19,8 +32,6 @@ input {
     accel-profile "flat"
   }
 
-  // Focus windows and outputs automatically when moving the mouse into them.
-  // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
   focus-follows-mouse max-scroll-amount="0%"
 }
 
@@ -59,25 +70,16 @@ overview {
   }
 }
 
-spawn-at-startup "swww img ~/.wallpaper.jpg"
-spawn-at-startup "waybar"
-spawn-at-startup "vesktop"
-
-prefer-no-csd
-
-screenshot-path "~/screenshot_%Y-%m-%d_%H-%M-%S.png"
-
-cursor {
-  xcursor-theme "catppuccin-mocha-dark-cursors"
-  xcursor-size 24
-}
-
 animations {
-  // Uncomment to turn off all animations.
-  // off
+  window-open {
+    duration-ms 400
+    curve "cubic-bezier" 0.23 1 0.32 1
+  }
 
-  // Slow down all animations by this factor. Values below 1 speed them up instead.
-  // slowdown 3.0
+  window-close {
+    duration-ms 400
+    curve "cubic-bezier" 0.23 1 0.32 1
+  }
 }
 
 window-rule {
