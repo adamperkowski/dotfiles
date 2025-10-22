@@ -10,8 +10,6 @@
 
     nerd-fonts.fira-code
     wl-clipboard
-    hyprpaper
-    hyprcursor
     grim
     slurp
 
