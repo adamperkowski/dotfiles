@@ -43,10 +43,20 @@
 
   environment = {
     localBinInPath = true;
-    systemPackages = with pkgs; [ htop ];
+    systemPackages = with pkgs; [
+      xwayland-satellite
+      htop
+    ];
   };
 
   programs.nano.enable = false;
+  programs.niri.enable = true;
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 
   services.pipewire = {
     enable = true;
@@ -67,17 +77,6 @@
       PermitRootLogin = "no";
       PubkeyAuthentication = true;
     };
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   nix.settings.experimental-features = [
