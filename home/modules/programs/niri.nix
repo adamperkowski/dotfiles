@@ -12,6 +12,8 @@
     spawn-at-startup = [
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
       { argv = [ "waybar" ]; }
+      { argv = [ "vesktop" ]; }
+      { sh = "sleep 10s; spotify"; } # delayed to let vesktop start first
     ];
 
     screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";
@@ -57,6 +59,8 @@
       center-focused-column = "never";
       background-color = "transparent";
 
+      default-column-width.proportion = 0.5;
+
       focus-ring.enable = false;
       border = {
         enable = true;
@@ -68,6 +72,8 @@
     };
 
     animations = {
+      # TODO: better workspace switching when its 1 to 10 for example
+
       window-open.kind.easing = {
         duration-ms = 400;
         curve = "cubic-bezier";
@@ -91,6 +97,19 @@
       };
     };
 
+    workspaces = {
+      "1" = { };
+      "2" = { };
+      "3" = { };
+      "4" = { };
+      "5" = { };
+      "6" = { };
+      "7" = { };
+      "8" = { };
+      "9" = { };
+      "social" = { };
+    };
+
     window-rules = [
       {
         clip-to-geometry = true;
@@ -98,6 +117,17 @@
       {
         matches = [ { app-id = "^Rofi$"; } ];
         open-floating = true;
+        open-focused = true;
+      }
+      {
+        matches = [ { app-id = "^vesktop$"; } ];
+        open-on-workspace = "social";
+        default-column-width.proportion = 0.56;
+      }
+      {
+        matches = [ { app-id = "^spotify$"; } ];
+        open-on-workspace = "social";
+        default-column-width.proportion = 0.44;
       }
       {
         matches = [ { title = "^(Picture-in-Picture|Discord Popout)$"; } ];
@@ -185,6 +215,7 @@
       "Mod+7".action = focus-workspace 7;
       "Mod+8".action = focus-workspace 8;
       "Mod+9".action = focus-workspace 9;
+      "Mod+0".action = focus-workspace "social";
 
       # the flake doesnt implement this (yet?)
       # "Mod+Shift+1".action = move-column-to-workspace 1;
@@ -196,6 +227,7 @@
       # "Mod+Shift+7".action = move-column-to-workspace 7;
       # "Mod+Shift+8".action = move-column-to-workspace 8;
       # "Mod+Shift+9".action = move-column-to-workspace 9;
+      # "Mod+Shift+0".action = move-column-to-workspace "social";
 
       "Mod+BracketLeft".action = consume-or-expel-window-left;
       "Mod+BracketRight".action = consume-or-expel-window-right;
