@@ -37,20 +37,23 @@
           system = prev.stdenv.hostPlatform.system;
           config = prev.config;
         };
+        niri = inputs.niri.overlays.niri;
       })
     ];
   };
 
   environment = {
     localBinInPath = true;
+    variables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
       xwayland-satellite
       htop
     ];
   };
 
-  programs.nano.enable = false;
   programs.niri.enable = true;
+
+  programs.nano.enable = false;
 
   programs.gnupg.agent = {
     enable = true;
