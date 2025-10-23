@@ -39,7 +39,6 @@ output "HDMI-A-1" {
   mode "1920x1080@60"
   scale 1
   transform "normal"
-  backdrop-color "#11111b"
 
   // TODO: wait for next release and uncomment
   /-hot-corners {
@@ -95,7 +94,7 @@ window-rule {
 }
 
 layer-rule {
-  match namespace="^wallpaper$"
+  match namespace="^swww-daemon$"
   place-within-backdrop true
 }
 
