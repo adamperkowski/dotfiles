@@ -44,7 +44,6 @@
 
   environment = {
     localBinInPath = true;
-    variables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; [
       xwayland-satellite
       htop
@@ -52,6 +51,11 @@
   };
 
   programs.niri.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   programs.nano.enable = false;
 
