@@ -45,18 +45,12 @@ in
             "2" = [ ];
             "3" = [ ];
             "4" = [ ];
-            "5" = [ ];
-            "6" = [ ];
-            "7" = [ ];
-            "8" = [ ];
-            "9" = [ ];
-            "10" = [ ];
           };
           format = "{icon}";
           format-icons = {
             "default" = "  ";
             "social" = "  ";
-            "11" = "";
+            "5" = "";
           };
         };
 
@@ -132,7 +126,7 @@ in
         color: @lavender;
       }
 
-      #workspaces button#niri-workspace-11 {
+      #workspaces button#niri-workspace-5 {
         font-size: 0px;
         border: none;
         padding: 0px;
