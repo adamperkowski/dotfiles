@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles/external/config";
@@ -12,6 +12,7 @@ let
   };
 in
 {
+  xdg.mimeApps.enable = true;
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
     recursive = true;
