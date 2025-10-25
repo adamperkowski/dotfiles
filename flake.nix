@@ -15,6 +15,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +38,7 @@
       self,
       nixpkgs,
       home-manager,
+      niri,
       ...
     }@inputs:
     let
@@ -47,6 +54,7 @@
             ./modules/base.nix
             ./systems/${name}
             home-manager.nixosModules.home-manager
+            niri.nixosModules.niri
             ./modules/home.nix
           ];
         };
