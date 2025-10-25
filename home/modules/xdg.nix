@@ -6,7 +6,6 @@ let
 
   configs = {
     hypr = "hypr";
-    niri = "niri";
     fastfetch = "fastfetch";
     lsd = "lsd";
   };
