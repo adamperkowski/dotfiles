@@ -12,7 +12,7 @@ function nixdev() {
   if [ $(nix flake show | grep 'devShells') ]; then
     nix develop -c zsh
   else
-    nix-shell --run zsh
+    nix-shell --run zsh $@
   fi
 }
 

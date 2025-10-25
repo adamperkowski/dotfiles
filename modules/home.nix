@@ -1,6 +1,7 @@
 { inputs, ... }:
 
 let
+  anvim = inputs.anvim;
   agenix = inputs.agenix;
   spicetify-nix = inputs.spicetify-nix;
 in
@@ -9,7 +10,14 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "bak";
-    extraSpecialArgs = { inherit agenix spicetify-nix; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        anvim
+        agenix
+        spicetify-nix
+        ;
+    }; # TODO: optimize maybe
     users.adam = import ../home/adam.nix;
   };
 }

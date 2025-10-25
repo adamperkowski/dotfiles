@@ -8,6 +8,7 @@
       { id = "bgnkhhnnamicmpeenaelnjfhikgbkllg"; } # AdGuard AdBlocker
       { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # Catppuccin Chrome Theme - Mocha
       { id = "lnjaiaapbakfhlbjenjkhffcdpoompki"; } # Catppuccin for Web File Explorer Icons
+      { id = "kaalofacklcidaampbokdplbklpeldpj"; } # Wide GitHub
       { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # Dark Reader
       { id = "clngdbkpkpeebahjckkjfobafhncgmne"; } # Stylus
     ];

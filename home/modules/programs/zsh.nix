@@ -24,7 +24,7 @@
 
     shellAliases = {
       cp = "cp -i";
-      nv = ''nvim -u "$HOME/.config/nvim/init.lua"'';
+      nv = "nvim";
       shred = "shred -uvz";
 
       diff = "diff --color=auto";
