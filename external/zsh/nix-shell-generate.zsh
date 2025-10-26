@@ -12,22 +12,25 @@ function nix-shell-generate() {
 
   touch "$filename"
   { tee "$filename" << EOF
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 let
   mainPkg = if builtins.pathExists ./default.nix then pkgs.callPackage ./default.nix { } else { };
-
-  pkgInputs =
-    with pkgs;
-    [
 EOF
   } > /dev/null
 
-  echo "      $@" >> "$filename"
+  if [ "$#" -eq 0 ]; then
+    echo -n '  pkgInputs = [ ] ' >> "$filename"
+  else
+    echo '  pkgInputs = [' >> "$filename"
+    printf '    %s\n' "$@" >> "$filename"
+    echo -ne "  ]\n  " >> "$filename"
+  fi
 
   { tee -a "$filename" << EOF
-  ]
-  ++ (mainPkg.nativeBuildInputs or [ ]);
+++ (mainPkg.nativeBuildInputs or [ ]);
 in
 pkgs.mkShell {
   packages = pkgInputs;
