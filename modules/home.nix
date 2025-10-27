@@ -1,6 +1,7 @@
 { inputs, ... }:
 
 let
+  iamb = inputs.iamb;
   anvim = inputs.anvim;
   agenix = inputs.agenix;
   spicetify-nix = inputs.spicetify-nix;
@@ -13,6 +14,7 @@ in
     extraSpecialArgs = {
       inherit
         inputs
+        iamb
         anvim
         agenix
         spicetify-nix

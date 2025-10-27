@@ -2,6 +2,7 @@
   imports = [
     ./git.nix
     ./zsh.nix
+    ./iamb.nix
     ./zoxide.nix
     ./neovim.nix
 
@@ -11,7 +12,6 @@
     ./waybar.nix
 
     ./vesktop.nix
-    # ./element.nix
     ./chromium.nix
     ./spicetify.nix
   ];
