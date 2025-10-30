@@ -7,12 +7,12 @@ set -euo pipefail
 nix-shell-generate() {
   local filename=${filename:-shell.nix}
 
-  if [[ -e "$filename" ]]; then
+  if [[ -e $filename ]]; then
     echo "$filename already exists"
     return 1
   fi
 
-  cat > "$filename" << 'EOF'
+  cat >"$filename" <<'EOF'
 {
   pkgs ? import <nixpkgs> { },
 }:
@@ -22,7 +22,7 @@ let
 EOF
 
   if [[ $# -eq 0 ]]; then
-    echo -n '  pkgInputs = [ ] ' >> "$filename"
+    echo -n '  pkgInputs = [ ] ' >>"$filename"
   else
     {
       echo "  pkgInputs ="
@@ -32,11 +32,11 @@ EOF
         echo "      $pkg"
       done
       echo "    ]"
-      echo -n "    ";
-    } >> "$filename"
+      echo -n "    "
+    } >>"$filename"
   fi
 
-  cat >> "$filename" << 'EOF'
+  cat >>"$filename" <<'EOF'
 ++ (mainPkg.nativeBuildInputs or [ ]);
 in
 pkgs.mkShell {

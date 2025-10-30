@@ -7,7 +7,10 @@ function nixpkgs-review-gha() {
 }
 
 function cd() {
-  { z "$@" 2>/dev/null && lsd -hN; } || { echo "dir \e[91m$*\e[0m not found!! \e[91mSTUPID! BONK!\e[0m :3"; return 1; }
+  { z "$@" 2>/dev/null && lsd -hN; } || {
+    echo "dir \e[91m$*\e[0m not found!! \e[91mSTUPID! BONK!\e[0m :3"
+    return 1
+  }
 }
 
 function command_not_found_handler() {

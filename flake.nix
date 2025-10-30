@@ -65,6 +65,6 @@
         laptop = mkHost "laptop";
       };
 
-      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+      formatter.${system} = nixpkgs.legacyPackages.${system}.callPackage ./formatter.nix { };
     };
 }
