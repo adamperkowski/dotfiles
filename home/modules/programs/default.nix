@@ -6,6 +6,9 @@
     ./zoxide.nix
     ./neovim.nix
 
+    ./niri.nix
+
+    ./swww.nix
     ./rofi.nix
     ./kitty.nix
     ./dunst.nix

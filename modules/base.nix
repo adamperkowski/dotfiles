@@ -37,16 +37,33 @@
           system = prev.stdenv.hostPlatform.system;
           config = prev.config;
         };
+        niri = inputs.niri.overlays.niri;
       })
     ];
   };
 
   environment = {
     localBinInPath = true;
-    systemPackages = with pkgs; [ htop ];
+    systemPackages = with pkgs; [
+      xwayland-satellite
+      htop
+    ];
+  };
+
+  programs.niri.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
 
   programs.nano.enable = false;
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 
   services.pipewire = {
     enable = true;
@@ -67,17 +84,6 @@
       PermitRootLogin = "no";
       PubkeyAuthentication = true;
     };
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   nix.settings.experimental-features = [
