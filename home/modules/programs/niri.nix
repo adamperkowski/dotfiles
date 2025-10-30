@@ -109,24 +109,33 @@
         clip-to-geometry = true;
       }
       {
-        matches = [ { app-id = "^Rofi$"; } ];
+        matches = [ { app-id = "^Rofi"; } ];
         open-floating = true;
         open-focused = true;
       }
       {
-        matches = [ { app-id = "^vesktop$"; } ];
+        matches = [ { app-id = "^vesktop"; } ];
         open-on-workspace = "social";
         default-column-width.proportion = 0.56;
       }
       {
-        matches = [ { app-id = "^spotify$"; } ];
+        matches = [ { app-id = "^spotify"; } ];
         open-on-workspace = "social";
         default-column-width.proportion = 0.44;
       }
       {
-        matches = [ { title = "^(Picture-in-Picture|Discord Popout)$"; } ];
+        matches = [ { title = "^(Picture-in-Picture|Discord Popout)"; } ];
         default-column-width.fixed = 800;
         default-window-height.fixed = 450;
+        open-floating = true;
+        default-floating-position = {
+          x = 0;
+          y = 0;
+          relative-to = "bottom-right";
+        };
+      }
+      {
+        matches = [ { title = "^notificationtoast.*"; } ];
         open-floating = true;
         default-floating-position = {
           x = 0;
@@ -138,7 +147,7 @@
 
     layer-rules = [
       {
-        matches = [ { namespace = "^swww-daemon$"; } ];
+        matches = [ { namespace = "^swww-daemon"; } ];
         place-within-backdrop = true;
       }
     ];
