@@ -27,6 +27,8 @@
       nv = "nvim";
       shred = "shred -uvz";
 
+      nixrs = "sudo nixos-rebuild switch --flake ~/dotfiles\\#$(hostname)";
+
       diff = "diff --color=auto";
       grep = "grep --color=auto";
       ip = "ip -color=auto";

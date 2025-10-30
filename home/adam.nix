@@ -6,8 +6,9 @@
   };
 
   imports = [
-    ./modules/age.nix
+    ./modules/scripts.nix
     ./modules/xdg.nix
+    ./modules/age.nix
     ./modules/theme.nix
     ./modules/packages.nix
     ./modules/wallpaper.nix
