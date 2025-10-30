@@ -1,19 +1,11 @@
-{ config, ... }:
-
 let
-  dotfiles = "${config.home.homeDirectory}/dotfiles/external/config";
-  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-
-  configs = {
-    hypr = "hypr";
-    fastfetch = "fastfetch";
-    lsd = "lsd";
-  };
+  configs = ../../external/config;
 in
 {
   xdg.mimeApps.enable = true;
-  xdg.configFile = builtins.mapAttrs (name: subpath: {
-    source = create_symlink "${dotfiles}/${subpath}";
+
+  xdg.configFile = builtins.mapAttrs (name: _: {
+    source = configs + "/${name}";
     recursive = true;
-  }) configs;
+  }) (builtins.readDir configs);
 }
