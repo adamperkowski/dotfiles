@@ -124,7 +124,12 @@
         default-column-width.proportion = 0.44;
       }
       {
-        matches = [ { title = "^(Picture-in-Picture|Discord Popout)"; } ];
+        matches = [ { app-id = "^steam"; } ];
+        open-on-workspace = "3";
+        default-column-width.proportion = 0.6;
+      }
+      {
+        matches = [ { title = "^(Picture in picture|Picture-in-Picture|Discord Popout)"; } ];
         default-column-width.fixed = 800;
         default-window-height.fixed = 450;
         open-floating = true;
