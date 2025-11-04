@@ -7,6 +7,7 @@
 
     settings = {
       profiles.user.user_id = "@xx0a_q:matrix.org";
+      dirs.downloads = "/tmp/downloads";
       settings = {
         username_display = "displayname";
         notifications.enabled = true;
