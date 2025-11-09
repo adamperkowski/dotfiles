@@ -27,6 +27,8 @@
       nv = "nvim";
       shred = "shred -uvz";
 
+      car = "cat";
+
       nixrs = "sudo nixos-rebuild switch --flake ~/dotfiles\\#$(hostname)";
 
       diff = "diff --color=auto";

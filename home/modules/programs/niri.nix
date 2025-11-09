@@ -28,7 +28,7 @@
 
     input = {
       keyboard = {
-        xkb.layout = "pl";
+        # xkb.layout = "pl";
         repeat-delay = 180;
         repeat-rate = 60;
         numlock = true;
@@ -44,16 +44,30 @@
       };
     };
 
-    outputs.HDMI-A-1 = {
-      scale = 1;
-      mode = {
-        width = 1920;
-        height = 1080;
-        refresh = 60.0;
+    outputs = {
+      HDMI-A-1 = {
+        scale = 1;
+        mode = {
+          width = 1920;
+          height = 1080;
+          refresh = 60.0;
+        };
+
+        # TODO: uncomment on next niri release
+        # hot-corners.enable = false;
       };
 
-      # TODO: uncomment on next niri release
-      # hot-corners.enable = false;
+      eDP-1 = {
+        scale = 1;
+        mode = {
+          width = 1920;
+          height = 1080;
+          refresh = 60.0;
+        };
+
+        # TODO: uncomment on next niri release
+        # hot-corners.enable = false;
+      };
     };
 
     layout = {

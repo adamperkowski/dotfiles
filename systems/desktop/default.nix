@@ -9,10 +9,14 @@
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
-  console.keyMap = "pl";
 
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+
+  services.xserver = {
+    xkb.layout = "us";
+    xkbVariant = "colemak";
+    videoDrivers = [ "nvidia" ];
+  };
 
   hardware.nvidia = {
     modesetting.enable = true;

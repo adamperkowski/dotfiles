@@ -13,6 +13,7 @@
     grim
     slurp
 
+    cloudflared
     unstable.kitget
   ];
 }
