@@ -14,15 +14,10 @@
     ];
   };
 
-  age = {
-    identityPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
-    secrets = {
-      chromium = {
-        file = ../../../secrets/chromium.sh.age;
-        mode = "0500";
-        path = "${config.home.homeDirectory}/.local/bin/chromium";
-      };
-    };
+  age.secrets.chromium = {
+    file = ../../../secrets/chromium.sh.age;
+    mode = "0500";
+    path = "${config.home.homeDirectory}/.local/bin/chromium";
   };
 
   home.sessionVariables.DEFAULT_BROWSER = "chromium";

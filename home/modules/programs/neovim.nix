@@ -1,4 +1,9 @@
-{ pkgs, anvim, ... }:
+{
+  pkgs,
+  config,
+  anvim,
+  ...
+}:
 
 {
   imports = [ anvim.homeManagerModules.default ];
@@ -12,4 +17,10 @@
     bash-language-server
     nixd
   ];
+
+  age.secrets.wakatime = {
+    file = ../../../secrets/wakatime.cfg.age;
+    mode = "0500";
+    path = "${config.home.homeDirectory}/.wakatime.cfg";
+  };
 }

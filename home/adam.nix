@@ -1,9 +1,13 @@
+{ config, ... }:
+
 {
   home = {
     username = "adam";
     homeDirectory = "/home/adam";
     stateVersion = "25.05";
   };
+
+  age.identityPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
 
   imports = [
     ./modules/scripts.nix

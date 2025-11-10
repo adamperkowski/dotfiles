@@ -3,4 +3,5 @@ let
 in
 {
   "chromium.sh.age".publicKeys = [ adam ];
+  "wakatime.cfg.age".publicKeys = [ adam ];
 }
