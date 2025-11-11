@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./hardware-configuration.nix
@@ -12,4 +14,8 @@
     xkb.layout = "us";
     xkbVariant = "colemak";
   };
+
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
 }
