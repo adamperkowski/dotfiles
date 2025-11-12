@@ -38,7 +38,7 @@ function precmd() {
 
   local baseprompt="${reset}${dim}%n${reset}${accent}@${reset}${dim}%m${reset}:${accent}%l${reset} ${dim}->${reset} ${cwd} ${dim}(${reset}%?${dim})${reset}${newline}"
 
-  if [[ "$last_command" == 'cat' || "$last_command" == 'head' || "$last_command" == 'tail' || "$last_command" == 'tac' || "$last_command" == 'nc' || "$last_command" == 'ncat' || "$last_command" == 'netcat' || "$last_command" == 'kitget' ]]; then
+  if [[ "$last_command" == 'car' || "$last_command" == 'cat' || "$last_command" == 'head' || "$last_command" == 'tail' || "$last_command" == 'tac' || "$last_command" == 'nc' || "$last_command" == 'ncat' || "$last_command" == 'netcat' || "$last_command" == 'kitget' ]]; then
     baseprompt+='😻'
   elif [[ "$last_command" == 'sudo' ]]; then
     baseprompt+='🙀'

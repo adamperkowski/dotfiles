@@ -1,9 +1,16 @@
 { pkgs, inputs, ... }:
 
 {
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelParams = [
+      "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
+      "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173"
+      "vt.default_blu=46,168,161,175,250,231,213,222,112,168,161,175,250,231,213,200"
+    ];
   };
 
   networking = {
@@ -13,7 +20,7 @@
 
   console = {
     font = "Lat2-Terminus16";
-    useXkbConfig = false;
+    useXkbConfig = true;
   };
 
   users.users.adam = {
@@ -37,16 +44,33 @@
           system = prev.stdenv.hostPlatform.system;
           config = prev.config;
         };
+        niri = inputs.niri.overlays.niri;
       })
     ];
   };
 
   environment = {
     localBinInPath = true;
-    systemPackages = with pkgs; [ htop ];
+    systemPackages = with pkgs; [
+      xwayland-satellite
+      htop
+    ];
+  };
+
+  programs.niri.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
 
   programs.nano.enable = false;
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 
   services.pipewire = {
     enable = true;
@@ -67,17 +91,6 @@
       PermitRootLogin = "no";
       PubkeyAuthentication = true;
     };
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
   };
 
   nix.settings.experimental-features = [

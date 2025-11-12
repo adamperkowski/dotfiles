@@ -14,7 +14,10 @@ in
         position = "top";
         width = 1920;
 
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [
+          "hyprland/workspaces"
+          "niri/workspaces"
+        ];
         modules-center = [ "custom/music" ];
         modules-right = [
           "tray"
@@ -30,6 +33,24 @@ in
             "default" = "";
             "9" = "󰓇";
             "10" = "";
+          };
+        };
+
+        "niri/workspaces" = {
+          disable-scroll = true;
+          sort-by-name = true;
+          persistent-only = true;
+          persistent-workspaces = {
+            "1" = [ ];
+            "2" = [ ];
+            "3" = [ ];
+            "4" = [ ];
+          };
+          format = "{icon}";
+          format-icons = {
+            "default" = "  ";
+            "social" = "  ";
+            "5" = "";
           };
         };
 
@@ -103,6 +124,15 @@ in
         padding: 5px;
         margin: 0;
         color: @lavender;
+      }
+
+      #workspaces button#niri-workspace-5 {
+        font-size: 0px;
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        min-width: 0px;
+        min-height: 0px;
       }
 
       #workspaces button.active {

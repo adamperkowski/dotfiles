@@ -10,11 +10,10 @@
 
     nerd-fonts.fira-code
     wl-clipboard
-    hyprpaper
-    hyprcursor
     grim
     slurp
 
+    cloudflared
     unstable.kitget
   ];
 }
