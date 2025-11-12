@@ -29,6 +29,7 @@
     ignoreShellProgramCheck = true;
     extraGroups = [
       "wheel"
+      "jellyfin"
     ];
     packages = with pkgs; [
       pavucontrol

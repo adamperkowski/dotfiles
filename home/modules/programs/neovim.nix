@@ -20,7 +20,7 @@
 
   age.secrets.wakatime = {
     file = ../../../secrets/wakatime.cfg.age;
-    mode = "0500";
+    mode = "0400";
     path = "${config.home.homeDirectory}/.wakatime.cfg";
   };
 }
