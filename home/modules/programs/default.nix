@@ -5,6 +5,7 @@
     ./iamb.nix
     ./zoxide.nix
     ./neovim.nix
+    ./jellyfin-rpc.nix
 
     ./niri.nix
 

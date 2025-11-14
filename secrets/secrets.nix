@@ -4,4 +4,5 @@ in
 {
   "chromium.sh.age".publicKeys = [ adam ];
   "wakatime.cfg.age".publicKeys = [ adam ];
+  "jellyfin-rpc.json.age".publicKeys = [ adam ];
 }

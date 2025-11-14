@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    jellyfin-tui
     prettyping
     fastfetch
     playerctl
@@ -13,7 +14,6 @@
     grim
     slurp
 
-    cloudflared
     unstable.kitget
   ];
 }

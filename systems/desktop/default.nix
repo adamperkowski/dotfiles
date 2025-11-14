@@ -32,4 +32,20 @@
   };
 
   programs.gamemode.enable = true;
+
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  environment.systemPackages = with pkgs; [ cloudflared ];
+
+  systemd.services.cloudflared = {
+    description = "cloudflare tunnel";
+    after = [ "jellyfin.service" ];
+
+    script = "${pkgs.cloudflared}/bin/cloudflared tunnel run --token eyJhIjoiZTcyNjAwOGE4ZmVjNDIwYTNhMDMzZDU2MWNjMGYyZmYiLCJ0IjoiZDUwNTQ4NjktYzEzZC00ZDc4LTk4MjYtOGFhNGJmOWUwOTBiIiwicyI6Ik9UWm1PVEl3WldFdFptVXlOaTAwWWpkbUxUZ3dPVGt0T0RZeFptWmxaREUwWWprMCJ9";
+
+    wantedBy = [ "multi-user.target" ];
+  };
 }

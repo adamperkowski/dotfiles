@@ -15,7 +15,6 @@
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
       { argv = [ "waybar" ]; }
       { argv = [ "vesktop" ]; }
-      { sh = "sleep 10s; spotify"; } # delayed to let vesktop start first
     ];
 
     screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";
@@ -133,14 +132,9 @@
         default-column-width.proportion = 0.56;
       }
       {
-        matches = [ { app-id = "^spotify"; } ];
-        open-on-workspace = "social";
-        default-column-width.proportion = 0.44;
-      }
-      {
         matches = [ { app-id = "^steam"; } ];
         open-on-workspace = "3";
-        default-column-width.proportion = 0.6;
+        default-column-width.proportion = 1.0;
       }
       {
         matches = [ { title = "^(Picture in picture|Picture-in-Picture|Discord Popout)"; } ];
