@@ -13,8 +13,10 @@
   hardware.graphics.enable = true;
 
   services.xserver = {
-    xkb.layout = "us";
-    xkbVariant = "colemak";
+    xkb = {
+      layout = "us";
+      variant = "colemak";
+    };
     videoDrivers = [ "nvidia" ];
   };
 
