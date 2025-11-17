@@ -9,10 +9,12 @@
     lsd
     jq
 
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
     nerd-fonts.fira-code
+
     wl-clipboard
-    grim
-    slurp
 
     unstable.kitget
   ];
