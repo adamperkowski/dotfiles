@@ -40,13 +40,13 @@
   nixpkgs = {
     config.allowUnfree = true;
     overlays = [
-      (final: prev: {
+      (_: prev: {
         unstable = import inputs.nixpkgs-unstable {
           system = prev.stdenv.hostPlatform.system;
           config = prev.config;
         };
-        niri = inputs.niri.overlays.niri;
       })
+      inputs.niri.overlays.niri
     ];
   };
 
@@ -58,7 +58,10 @@
     ];
   };
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   programs.hyprland = {
     enable = true;
