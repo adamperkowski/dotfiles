@@ -37,6 +37,7 @@
 
   services.jellyfin = {
     enable = true;
+    package = pkgs.unstable.jellyfin; # TODO: update to 25.11 stable
     openFirewall = true;
   };
 

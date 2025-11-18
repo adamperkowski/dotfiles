@@ -1,7 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ jellyfin-rpc ];
+  # TODO: update to 25.11 stable
+  home.packages = with pkgs; [ unstable.jellyfin-rpc ];
 
   age.secrets.jellyfin-rpc = {
     file = ../../../secrets/jellyfin-rpc.json.age;

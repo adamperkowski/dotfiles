@@ -60,7 +60,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    package = pkgs.niri-stable;
   };
 
   programs.hyprland = {
@@ -107,14 +107,15 @@
   };
 
   system = {
-    replaceDependencies.replacements = with pkgs; [
+    # TODO: update to 25.11 stable
+    replaceDependencies.replacements = with pkgs.unstable; [
       {
         oldDependency = coreutils-full;
         newDependency = symlinkJoin {
           name =
             "coreuutils-full"
             + builtins.concatStringsSep "" (
-              builtins.genList (_: "_") (builtins.stringLength pkgs.coreutils-full.version)
+              builtins.genList (_: "_") (builtins.stringLength coreutils-full.version)
             );
           paths = [ uutils-coreutils-noprefix ];
         };
@@ -125,7 +126,7 @@
           name =
             "coreuutils"
             + builtins.concatStringsSep "" (
-              builtins.genList (_: "_") (builtins.stringLength pkgs.coreutils.version)
+              builtins.genList (_: "_") (builtins.stringLength coreutils.version)
             );
           paths = [ uutils-coreutils-noprefix ];
         };
@@ -136,7 +137,7 @@
           name =
             "finduutils"
             + builtins.concatStringsSep "" (
-              builtins.genList (_: "_") (builtins.stringLength pkgs.findutils.version)
+              builtins.genList (_: "_") (builtins.stringLength findutils.version)
             );
           paths = [ uutils-findutils ];
         };
@@ -147,7 +148,7 @@
           name =
             "diffuutils"
             + builtins.concatStringsSep "" (
-              builtins.genList (_: "_") (builtins.stringLength pkgs.diffutils.version)
+              builtins.genList (_: "_") (builtins.stringLength diffutils.version)
             );
           paths = [ uutils-diffutils ];
         };

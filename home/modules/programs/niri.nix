@@ -82,6 +82,9 @@
       };
     };
 
+    # TODO: uncomment on next release
+    # recent-windows.enable = false;
+
     animations = {
       window-open.kind.easing = {
         duration-ms = 400;

@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
+  # TODO: update all to 25.11 stable
   home.packages = with pkgs; [
-    jellyfin-tui
+    unstable.jellyfin-tui
     prettyping
     fastfetch
     playerctl
