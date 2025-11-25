@@ -17,6 +17,5 @@
 
     ./vesktop.nix
     ./chromium.nix
-    ./spicetify.nix
   ];
 }

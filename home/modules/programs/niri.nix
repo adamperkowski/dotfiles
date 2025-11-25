@@ -128,12 +128,12 @@
       {
         matches = [ { app-id = "^vesktop"; } ];
         open-on-workspace = "social";
-        default-column-width.proportion = 0.56;
+        open-maximized = true;
       }
       {
         matches = [ { app-id = "^steam"; } ];
         open-on-workspace = "3";
-        default-column-width.proportion = 1.0;
+        open-maximized = true;
       }
       {
         matches = [ { title = "^(Picture in picture|Picture-in-Picture|Discord Popout)"; } ];

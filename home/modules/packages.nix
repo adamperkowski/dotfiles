@@ -10,6 +10,8 @@
     lsd
     jq
 
+    signal-desktop
+
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
