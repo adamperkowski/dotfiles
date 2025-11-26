@@ -113,8 +113,7 @@
   };
 
   system = {
-    # TODO: update to 25.11 stable
-    replaceDependencies.replacements = with pkgs.unstable; [
+    replaceDependencies.replacements = with pkgs; [
       {
         oldDependency = coreutils-full;
         newDependency = symlinkJoin {
@@ -161,6 +160,6 @@
       }
     ];
 
-    stateVersion = "25.05";
+    stateVersion = "25.11";
   };
 }

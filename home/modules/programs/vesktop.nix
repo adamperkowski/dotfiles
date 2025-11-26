@@ -14,10 +14,7 @@
         "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Themes/SettingsModal/SettingsModal.theme.css"
       ];
       plugins = {
-        NoTrack = {
-          enabled = true;
-          disableAnalytics = true;
-        };
+        AlwaysExpandRoles.enabled = true;
         AlwaysTrust = {
           enabled = true;
           domain = true;
@@ -29,6 +26,7 @@
           method = 0;
           randomisedLength = 8;
         };
+        BetterGifPicker.enabled = true;
         BetterSettings = {
           enabled = true;
           disableFade = true;
@@ -41,6 +39,7 @@
           agreedToGuidelines = true;
         };
         Experiments.enabled = true;
+        ExpressionCloner.enabled = true;
         FakeNitro = {
           enabled = true;
           enableEmojiBypass = true;
@@ -72,8 +71,13 @@
           inlineEdits = true;
         };
         MoreKaomoji.enabled = true;
+        NoTrack = {
+          enabled = true;
+          disableAnalytics = true;
+        };
         NoTypingAnimation.enabled = true;
         petpet.enabled = true;
+        PinDMs.enabled = true;
         RelationshipNotifier.enabled = true;
         ShowHiddenChannels.enabled = true;
         ShowHiddenThings.enabled = true;
@@ -90,8 +94,8 @@
         };
         USRBG.enabled = true;
         ViewRaw.enabled = true;
-        WhoReacted.enabled = true;
         VolumeBooster.enabled = true;
+        WhoReacted.enabled = true;
       };
     };
   };

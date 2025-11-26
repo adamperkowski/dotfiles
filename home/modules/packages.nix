@@ -3,7 +3,7 @@
 {
   # TODO: update all to 25.11 stable
   home.packages = with pkgs; [
-    unstable.jellyfin-tui
+    jellyfin-tui
     prettyping
     fastfetch
     playerctl
@@ -19,6 +19,6 @@
 
     wl-clipboard
 
-    unstable.kitget
+    kitget
   ];
 }
