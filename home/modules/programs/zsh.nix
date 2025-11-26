@@ -29,7 +29,9 @@
 
       car = "cat";
 
-      nixrs = "sudo nixos-rebuild switch --flake ~/dotfiles\\#$(hostname)";
+      nix-build = "nom build";
+      nix-shell = "nom shell";
+      nixdev = "nom develop";
 
       diff = "diff --color=auto";
       grep = "grep --color=auto";

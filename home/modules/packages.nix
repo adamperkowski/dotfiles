@@ -3,6 +3,7 @@
 {
   # TODO: update all to 25.11 stable
   home.packages = with pkgs; [
+    nix-output-monitor
     jellyfin-tui
     prettyping
     fastfetch

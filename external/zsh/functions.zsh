@@ -1,3 +1,7 @@
+function nixos-rebuild() {
+  sudo nixos-rebuild --no-reexec --flake "$HOME/dotfiles#$(hostname)" --log-format internal-json -v "$@" |& nom --json
+}
+
 function nixpkgs-build() {
   nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
 }
