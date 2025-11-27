@@ -10,7 +10,7 @@
   age.identityPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
 
   imports = [
-    ./modules/scripts.nix
+    ./modules/external.nix
     ./modules/xdg.nix
     ./modules/age.nix
     ./modules/theme.nix

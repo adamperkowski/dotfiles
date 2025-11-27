@@ -25,9 +25,10 @@
     shellAliases = {
       cp = "cp -i";
       nv = "nvim";
+      car = "cat";
       shred = "shred -uvz";
 
-      car = "cat";
+      mkdirenv = "echo -e 'if has nix;then\\n  use flake\\nfi' >> .envrc && direnv allow";
 
       nix-build = "nom build";
       nix-shell = "nom shell";

@@ -3,6 +3,7 @@
     ./git.nix
     ./zsh.nix
     ./iamb.nix
+    ./direnv.nix
     ./zoxide.nix
     ./neovim.nix
     ./jellyfin-rpc.nix

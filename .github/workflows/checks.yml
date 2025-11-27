@@ -31,4 +31,4 @@ jobs:
       - name: commit message
         uses: adamperkowski/commits@main
         with:
-          scopes: base,home,config,scripts,zsh,systems,docs,ci,chore
+          scopes: base,home,external,zsh,systems,docs,ci,chore

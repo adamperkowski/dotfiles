@@ -1,16 +1,8 @@
 { pkgs, ... }:
 
-let
-  configs = ../../external/config;
-in
 {
   xdg = {
     mimeApps.enable = true;
-
-    configFile = builtins.mapAttrs (name: _: {
-      source = configs + "/${name}";
-      recursive = true;
-    }) (builtins.readDir configs);
 
     portal = {
       enable = true;
