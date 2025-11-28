@@ -1,12 +1,12 @@
 {
   pkgs,
   config,
-  anvim,
+  inputs,
   ...
 }:
 
 {
-  imports = [ anvim.homeManagerModules.default ];
+  imports = [ inputs.anvim.homeManagerModules.default ];
 
   programs.anvim = {
     enable = true;

@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   services.gnome-keyring.enable = false;
 

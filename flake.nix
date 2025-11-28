@@ -2,8 +2,8 @@
   description = "my nixos dotfiles :3";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/release-25.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz";
+    nixpkgs-unstable.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     systems.url = "github:nix-systems/default";
 
     home-manager = {

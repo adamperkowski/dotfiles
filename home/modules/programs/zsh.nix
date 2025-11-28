@@ -28,10 +28,10 @@
       car = "cat";
       shred = "shred -uvz";
 
-      mkdirenv = "echo -e 'if has nix;then\\n  use flake\\nfi' >> .envrc && direnv allow";
+      mkdirenv = "echo -e 'if has nix; then\\n  use flake\\nfi' >> .envrc && direnv allow";
 
-      nix-build = "nom build";
-      nix-shell = "nom shell";
+      nixb = "nom build";
+      nixs = "nom shell";
       nixdev = "nom develop";
 
       diff = "diff --color=auto";

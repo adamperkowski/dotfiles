@@ -1,9 +1,9 @@
-{ pkgs, iamb, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.iamb = {
     enable = true;
-    package = iamb.packages.${pkgs.stdenv.system}.default;
+    package = inputs.iamb.packages.${pkgs.stdenv.system}.default;
 
     settings = {
       profiles.user.user_id = "@adam:matrix.system72.dev";

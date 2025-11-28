@@ -1,6 +1,7 @@
-{ pkgs, spicetify-nix, ... }:
+{ pkgs, inputs, ... }:
 
 let
+  inherit (inputs) spicetify-nix;
   spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {

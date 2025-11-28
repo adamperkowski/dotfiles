@@ -1,5 +1,7 @@
+{ pkgs, ... }:
+
 let
-  catppuccin = builtins.fetchurl {
+  catppuccin = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/waybar/refs/tags/v1.1/themes/mocha.css";
     sha256 = "puMFl8zIKOiYhE6wzqnffXOHn/VnKmpVDzrMJMk+3Rc=";
   };
