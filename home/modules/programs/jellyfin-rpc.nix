@@ -15,7 +15,7 @@
     };
 
     Service = {
-      ExecStart = "${pkgs.jellyfin-rpc}/bin/jellyfin-rpc -c /run/user/1000/agenix/jellyfin-rpc";
+      ExecStart = "${pkgs.jellyfin-rpc}/bin/jellyfin-rpc -c /run/user/%U/agenix/jellyfin-rpc";
       Restart = "on-failure";
       RestartSec = 60;
     };

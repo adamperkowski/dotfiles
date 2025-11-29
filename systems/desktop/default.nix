@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.agenix.nixosModules.default
   ];
 
   networking.hostName = "desktop";
@@ -43,11 +44,24 @@
 
   environment.systemPackages = with pkgs; [ cloudflared ];
 
+  age.secrets.cloudflare = {
+    file = ../../secrets/cloudflare.pem.age;
+    mode = "0400";
+  };
+
   systemd.services.cloudflared = {
     description = "cloudflare tunnel";
     after = [ "jellyfin.service" ];
 
-    script = "${pkgs.cloudflared}/bin/cloudflared tunnel run --token eyJhIjoiZTcyNjAwOGE4ZmVjNDIwYTNhMDMzZDU2MWNjMGYyZmYiLCJ0IjoiZDUwNTQ4NjktYzEzZC00ZDc4LTk4MjYtOGFhNGJmOWUwOTBiIiwicyI6Ik9UWm1PVEl3WldFdFptVXlOaTAwWWpkbUxUZ3dPVGt0T0RZeFptWmxaREUwWWprMCJ9";
+    script = ''
+      export TUNNEL_ORIGIN_CERT=/run/agenix/cloudflare
+
+      cloudflared=${pkgs.cloudflared}/bin/cloudflared
+      token=$($cloudflared tunnel token jelly)
+
+      $cloudflared tunnel run --token $token
+    '';
+
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
