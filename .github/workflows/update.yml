@@ -35,7 +35,7 @@ jobs:
       - name: update actions
         uses: saadmk11/github-actions-version-updater@v0.9.0
         with:
-          token: ''
+          token: 'aaaaaaaaaa'
           skip_pull_request: true
       - name: create pull request
         uses: peter-evans/create-pull-request@v7
