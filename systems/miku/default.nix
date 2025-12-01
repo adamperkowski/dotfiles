@@ -47,9 +47,13 @@
 
   environment.systemPackages = with pkgs; [ cloudflared ];
 
-  age.secrets.cloudflared = {
-    file = ../../secrets/cloudflared.pem.age;
-    mode = "0400";
+  age = {
+    identityPaths = [ "/home/adam/.ssh/id_ed25519" ];
+
+    secrets.cloudflared = {
+      file = ../../secrets/cloudflared.pem.age;
+      mode = "0400";
+    };
   };
 
   systemd.services.cloudflared = {

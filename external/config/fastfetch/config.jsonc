@@ -28,6 +28,11 @@
 
   "modules": [
     "break",
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[0;38;2;180;190;254mᓚ₍ ^. .^₎                ₍^. .^ ₎ᓗ\u001b[0m"
+    },
     {
       "type": "custom",
       "format": "\u001b[0;38;2;203;166;247m╭──────────────────────────────────╮\u001b[0m"
@@ -47,6 +52,12 @@
       "format": "{result}"
     },
     {
+      "type": "uptime",
+      "key": "uptime  ",
+      "keyIcon": " ",
+      "format": "{days}d {hours}h {minutes}m"
+    },
+    {
       "type": "os",
       "key": "distro  ",
       "keyIcon": " ",
@@ -58,36 +69,16 @@
       "keyIcon": " "
     },
     {
-      "type": "packages",
-      "key": "packages",
-      "keyIcon": " "
-    },
-    {
-      "type": "uptime",
-      "key": "uptime  ",
-      "keyIcon": " ",
-      "format": "{days}d {hours}h {minutes}m"
-    },
-    {
-      "type": "shell",
-      "key": "shell   ",
-      "keyIcon": " "
-    },
-    {
-      "type": "terminal",
-      "key": "terminal",
-      "keyIcon": " "
-    },
-    {
-      "type": "wm",
-      "key": "wm      ",
-      "keyIcon": " ",
-      "format": "{pretty-name} {version}"
+      "type": "command",
+      "shell": "/bin/sh",
+      "text": "kitget -V | cut -d ' ' -f2",
+      "key": "kitget  ",
+      "keyIcon": "󰄛 ",
+      "format": "{result}"
     },
     {
       "type": "custom",
       "format": "\u001b[0;38;2;203;166;247m╰──────────────────────────────────╯\u001b[0m"
-    },
-    "break"
+    }
   ]
 }

@@ -18,13 +18,11 @@ pkgs.treefmt.withConfig {
 
       shfmt = {
         command = "shfmt";
-        options = [
-          "-w"
-        ];
+        options = [ "-w" ];
         includes = [
           "*.sh"
-          # "*.zsh" # https://github.com/mvdan/sh/issues/120
           "*.bash"
+          # "*.zsh" # https://github.com/mvdan/sh/issues/120
         ];
       };
     };

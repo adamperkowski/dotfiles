@@ -12,7 +12,7 @@
     spawn-at-startup = [
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
       { argv = [ "waybar" ]; }
-      { argv = [ "vesktop" ]; }
+      { argv = [ "sleep 2; vesktop" ]; }
     ];
 
     screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";
