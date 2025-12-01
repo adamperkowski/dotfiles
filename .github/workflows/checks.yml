@@ -30,5 +30,3 @@ jobs:
     steps:
       - name: commit message
         uses: adamperkowski/commits@main
-        with:
-          scopes: base,home,external,zsh,systems,docs,ci,flake

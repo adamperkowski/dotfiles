@@ -9,6 +9,7 @@
     playerctl
     lsd
     jq
+    gh
 
     signal-desktop
 

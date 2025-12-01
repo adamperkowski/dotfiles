@@ -25,7 +25,6 @@
 
     input = {
       keyboard = {
-        # xkb.layout = "pl";
         repeat-delay = 180;
         repeat-rate = 60;
         numlock = true;

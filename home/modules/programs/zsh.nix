@@ -31,7 +31,7 @@
       mkdirenv = "echo -e 'if has nix; then\\n  use flake\\nfi' >> .envrc && direnv allow";
 
       nixb = "nom build";
-      nixs = "nom shell -c $SHELL";
+      nixs = "nom shell";
       nixdev = "nom develop -c $SHELL";
 
       diff = "diff --color=auto";

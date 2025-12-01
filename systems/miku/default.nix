@@ -2,11 +2,13 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
     inputs.agenix.nixosModules.default
   ];
 
-  networking.hostName = "desktop";
+  boot.loader.systemd-boot.enable = true;
+
+  networking.hostName = "miku";
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -18,6 +20,7 @@
       layout = "us";
       variant = "colemak";
     };
+
     videoDrivers = [ "nvidia" ];
   };
 
@@ -44,8 +47,8 @@
 
   environment.systemPackages = with pkgs; [ cloudflared ];
 
-  age.secrets.cloudflare = {
-    file = ../../secrets/cloudflare.pem.age;
+  age.secrets.cloudflared = {
+    file = ../../secrets/cloudflared.pem.age;
     mode = "0400";
   };
 
@@ -54,7 +57,7 @@
     after = [ "jellyfin.service" ];
 
     script = ''
-      export TUNNEL_ORIGIN_CERT=/run/agenix/cloudflare
+      export TUNNEL_ORIGIN_CERT=/run/agenix/cloudflared
 
       cloudflared=${pkgs.cloudflared}/bin/cloudflared
       token=$($cloudflared tunnel token jelly)

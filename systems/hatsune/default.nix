@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware.nix ];
 
-  networking.hostName = "laptop";
+  boot.loader.systemd-boot.enable = true;
+
+  networking.hostName = "hatsune";
 
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";

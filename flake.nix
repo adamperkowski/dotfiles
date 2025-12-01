@@ -42,35 +42,30 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      niri,
-      ...
-    }@inputs:
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (nixpkgs) lib;
       system = "x86_64-linux";
 
       mkHost =
-        name:
+        name: extraModules:
         lib.nixosSystem {
           specialArgs = { inherit inputs; };
-
           modules = [
-            ./modules/base.nix
+            ./modules/base
             ./systems/${name}
-            home-manager.nixosModules.home-manager
-            niri.nixosModules.niri
-            ./modules/home.nix
-          ];
+          ]
+          ++ extraModules;
         };
+
+      mkDesktopHost = name: mkHost name [ ./modules/desktop ];
+      mkServerHost = name: mkHost name;
     in
     {
       nixosConfigurations = {
-        desktop = mkHost "desktop";
-        laptop = mkHost "laptop";
+        miku = mkDesktopHost "miku";
+        hatsune = mkDesktopHost "hatsune";
+        seber = mkHost "seber" [ ];
       };
 
       formatter.${system} = nixpkgs.legacyPackages.${system}.callPackage ./formatter.nix { };
