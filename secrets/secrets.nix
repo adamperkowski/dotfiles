@@ -8,6 +8,7 @@ in
   "jellyfin-rpc.json.age".publicKeys = [ adam ];
   "wakatime.cfg.age".publicKeys = [ adam ];
 
+  "vaultwarden.env.age".publicKeys = [ seber ];
   "ssl-adamperkowski.cert.pem.age".publicKeys = [ seber ];
   "ssl-adamperkowski.key.pem.age".publicKeys = [ seber ];
 }
