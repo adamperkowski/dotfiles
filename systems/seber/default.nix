@@ -20,6 +20,7 @@
     git
     vim
     htop
+    nodejs
   ];
 
   networking.firewall.allowedTCPPorts = [
@@ -80,6 +81,19 @@
         sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
         sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
       };
+
+      "lebel.adamperkowski.dev" = {
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:14831";
+          extraConfig = ''
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+          '';
+        };
+        onlySSL = true;
+        sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
+        sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
+      };
     };
   };
 
@@ -104,6 +118,21 @@
     serviceConfig = {
       ExecStart = "/var/website/website/bin/website";
       WorkingDirectory = "/var/website";
+      Restart = "on-failure";
+      RestartSec = 10;
+    };
+  };
+
+  systemd.services.lebel = {
+    description = "lebel";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      User = "adam";
+      Group = "users";
+      ExecStart = "${pkgs.nodejs}/bin/node --env-file /var/lebel/.env /var/lebel/build/main.js";
+      WorkingDirectory = "/var/lebel";
       Restart = "on-failure";
       RestartSec = 10;
     };
