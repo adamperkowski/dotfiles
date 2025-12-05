@@ -12,7 +12,7 @@
     spawn-at-startup = [
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
       { argv = [ "waybar" ]; }
-      { argv = [ "sleep 2; vesktop" ]; }
+      { argv = [ "sleep 5; vesktop" ]; }
     ];
 
     screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";
@@ -125,11 +125,6 @@
       {
         matches = [ { app-id = "^vesktop"; } ];
         open-on-workspace = "social";
-        open-maximized = true;
-      }
-      {
-        matches = [ { app-id = "^steam"; } ];
-        open-on-workspace = "3";
         open-maximized = true;
       }
       {

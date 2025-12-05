@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     nix-output-monitor
+    jellyfin-mpv-shim
     jellyfin-tui
     prettyping
     fastfetch
