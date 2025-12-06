@@ -59,7 +59,6 @@
         };
 
       mkDesktopHost = name: mkHost name [ ./modules/desktop ];
-      mkServerHost = name: mkHost name;
     in
     {
       nixosConfigurations = {

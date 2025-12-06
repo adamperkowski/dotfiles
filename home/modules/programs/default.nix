@@ -14,7 +14,7 @@
     ./rofi.nix
     ./kitty.nix
     ./dunst.nix
-    ./waybar.nix
+    ./quickshell.nix
 
     ./vesktop.nix
     ./chromium.nix

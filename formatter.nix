@@ -3,7 +3,9 @@
 pkgs.treefmt.withConfig {
   runtimeInputs = with pkgs; [
     nixfmt-rfc-style
+    js-beautify
     shfmt
+    kdePackages.qtdeclarative
   ];
 
   settings = {
@@ -16,6 +18,22 @@ pkgs.treefmt.withConfig {
         includes = [ "*.nix" ];
       };
 
+      js-beautify = {
+        command = "js-beautify";
+        options = [
+          "--replace"
+          "--editorconfig"
+          "--jslint-happy"
+          "--max-preserve-newlines"
+          "2"
+        ];
+        includes = [
+          "*.js"
+          "*.mjs"
+          "*.css"
+        ];
+      };
+
       shfmt = {
         command = "shfmt";
         options = [ "-w" ];
@@ -24,6 +42,17 @@ pkgs.treefmt.withConfig {
           "*.bash"
           # "*.zsh" # https://github.com/mvdan/sh/issues/120
         ];
+      };
+
+      qmlformat = {
+        command = "qmlformat";
+        options = [
+          "--inplace"
+          "--sort-imports"
+          "--indent-width"
+          "2"
+        ];
+        includes = [ "*.qml" ];
       };
     };
   };

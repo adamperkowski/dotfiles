@@ -1,5 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
+let
+  external = ../../../external/zsh;
+in
 {
   programs.zsh = {
     enable = true;
@@ -55,22 +58,18 @@
       gmain = "if ! git checkout --track origin/main; then if ! git checkout main; then git checkout master; fi; fi";
     };
 
-    envExtra = ''
-      export DOTFILES="${config.home.homeDirectory}/dotfiles"
-    '';
-
     initContent = ''
       export GPG_TTY=$(tty)
 
-      . "$DOTFILES/external/zsh/keymap.zsh"
-      . "$DOTFILES/external/zsh/prompt.zsh"
-      . "$DOTFILES/external/zsh/functions.zsh"
+      ${builtins.readFile (external + "/keymap.zsh")}
+      ${builtins.readFile (external + "/prompt.zsh")}
+      ${builtins.readFile (external + "/functions.zsh")}
 
       ff
     '';
 
     profileExtra = ''
-      . "$DOTFILES/external/zsh/profile.zsh"
+      ${builtins.readFile (external + "/profile.zsh")}
     '';
   };
 }
