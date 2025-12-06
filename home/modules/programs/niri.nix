@@ -11,8 +11,6 @@
   programs.niri.settings = {
     spawn-at-startup = [
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
-      { argv = [ "waybar" ]; }
-      { argv = [ "sleep 5; vesktop" ]; }
     ];
 
     screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";

@@ -6,7 +6,6 @@
     jellyfin-mpv-shim
     jellyfin-tui
     prettyping
-    fastfetch
     playerctl
     lsd
     jq
