@@ -34,8 +34,8 @@ in
       mkdirenv = "echo -e 'if has nix; then\\n  use flake\\nfi' >> .envrc && direnv allow";
 
       nixb = "nom build";
-      nixs = "nom shell";
-      nixdev = "nom develop -c $SHELL";
+      nixs = "FF_SKIP=1 nom shell";
+      nixdev = "FF_SKIP=1 nom develop -c $SHELL";
 
       diff = "diff --color=auto";
       grep = "grep --color=auto";

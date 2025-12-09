@@ -1,0 +1,15 @@
+when:
+  - event: [push, pull_request]
+    branch: main
+
+steps:
+  - name: commit message
+    image: ghcr.io/adamperkowski/commits:latest
+    commands:
+      - check-commit-message "$(git log -1 --pretty=%B)"
+  - name: formatting
+    image: nixos/nix
+    commands:
+      - echo 'experimental-features = flakes nix-command' >> /etc/nix/nix.conf
+      - nix fmt   --inputs-from .
+      - nix shell --inputs-from . nixpkgs#git -c git diff --exit-code

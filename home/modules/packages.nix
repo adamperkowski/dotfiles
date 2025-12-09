@@ -10,6 +10,7 @@
     lsd
     jq
     gh
+    codeberg-cli
 
     signal-desktop
 
