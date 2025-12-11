@@ -34,11 +34,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765065218,
-        "narHash": "sha256-b5Y1/YCBiToBh+IWotteesSus4npxVThdZLlZfQfbxQ=",
+        "lastModified": 1765485481,
+        "narHash": "sha256-RkmheICQaClk9NerL1WjhaMZyYaXMwG7ztui3pkoL78=",
         "owner": "adamperkowski",
         "repo": "anvim",
-        "rev": "5cc2b66e73d87c8e12a69bd7e43472ad305f0a67",
+        "rev": "8a0c2401205f6534cf08c40c71d05766ae9be0d1",
         "type": "github"
       },
       "original": {
