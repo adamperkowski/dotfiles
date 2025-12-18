@@ -3,7 +3,7 @@ function nixos-rebuild() {
 }
 
 function nixpkgs-build() {
-  nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}"
+  nix-build -E "with import <nixpkgs> {}; callPackage ./$1 {}" --log-format internal-json -v |& nom --json
 }
 
 function nixpkgs-review-gha() {

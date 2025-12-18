@@ -44,7 +44,10 @@
     openFirewall = true;
   };
 
-  environment.systemPackages = with pkgs; [ cloudflared ];
+  environment.systemPackages = with pkgs; [
+    cloudflared
+    prismlauncher
+  ];
 
   age = {
     identityPaths = [ "/home/adam/.ssh/id_ed25519" ];

@@ -59,13 +59,14 @@ in
     };
 
     initContent = ''
-      export GPG_TTY=$(tty)
-
       ${builtins.readFile (external + "/keymap.zsh")}
       ${builtins.readFile (external + "/prompt.zsh")}
       ${builtins.readFile (external + "/functions.zsh")}
 
-      ff
+      export GPG_TTY=$(tty)
+      source <(fzf --zsh)
+
+      cuteff
     '';
 
     profileExtra = ''

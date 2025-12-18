@@ -9,10 +9,7 @@
     };
     vencord.settings = {
       useQuickCss = true;
-      themeLinks = [
-        "https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css"
-        "https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Themes/SettingsModal/SettingsModal.theme.css"
-      ];
+      themeLinks = [ "https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css" ];
       plugins = {
         AlwaysExpandRoles.enabled = true;
         AlwaysTrust = {

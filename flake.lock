@@ -47,6 +47,24 @@
         "type": "github"
       }
     },
+    "cuteff": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765657064,
+        "narHash": "sha256-4tK5gWUluFFJOuU+vbFxXH7kkkT/P12lpXrTJQUEWPA=",
+        "rev": "b7dce0dfb9004ed9f8044b7a44b674e5f9a09e30",
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/adamperkowski/cuteff/archive/b7dce0dfb9004ed9f8044b7a44b674e5f9a09e30.tar.gz?rev=b7dce0dfb9004ed9f8044b7a44b674e5f9a09e30"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://codeberg.org/adamperkowski/cuteff/archive/main.tar.gz"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -145,11 +163,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1765293151,
-        "narHash": "sha256-Q4P8qRNnQPCpV5LiVIbH2PwLpjMzW8lSr05Mx5yHa0A=",
+        "lastModified": 1766040769,
+        "narHash": "sha256-4zF2EwZep5g/5ItwOHcMr9qtgoQ2dyGfS0efbnuo/PI=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "402e12d51ee68449a20e8e8f8a027e06d1d23fbe",
+        "rev": "a522bdc457ba81acebd24ece29343e5ffd6cafce",
         "type": "github"
       },
       "original": {
@@ -224,6 +242,7 @@
       "inputs": {
         "agenix": "agenix",
         "anvim": "anvim",
+        "cuteff": "cuteff",
         "home-manager": "home-manager",
         "iamb": "iamb",
         "niri": "niri",

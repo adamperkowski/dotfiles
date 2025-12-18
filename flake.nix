@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cuteff = {
+      url = "https://codeberg.org/adamperkowski/cuteff/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake";
       # inputs.nixpkgs.follows = "nixpkgs-unstable";
