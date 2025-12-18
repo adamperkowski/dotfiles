@@ -13,7 +13,7 @@ in
 {
   programs.rofi = {
     enable = true;
-    font = "FiraCode Nerd Font 14";
+    font = "Maple Mono NF 14";
 
     # cool hack lmao
     theme = ''

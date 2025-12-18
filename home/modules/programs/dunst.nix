@@ -11,7 +11,7 @@
         origin = "top-right";
         width = "(78, 400)";
         offset = "(0,0)";
-        font = "FiraCode Nerd Font 10";
+        font = "Maple Mono NF 10";
 
         frame_color = "#b4befe";
         separator_color = "frame";

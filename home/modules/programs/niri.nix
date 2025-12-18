@@ -130,6 +130,7 @@
         default-column-width.fixed = 800;
         default-window-height.fixed = 450;
         open-floating = true;
+        open-focused = false;
         default-floating-position = {
           x = 0;
           y = 0;

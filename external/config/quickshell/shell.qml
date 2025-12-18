@@ -13,7 +13,7 @@ ShellRoot {
   property color colAccent: "#b4befe"
   property color colSecond: "#cba6f7"
 
-  property string fontFamily: "FiraCode Nerd Font"
+  property string fontFamily: "Maple Mono NF"
   property int fontSize: 14
 
   property int wmWSC

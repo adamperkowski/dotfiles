@@ -13,7 +13,7 @@ in
     settings = {
       main = {
         include = builtins.toString catppuccin;
-        font = "FiraCode Nerd Font:pixelsize=15";
+        font = "Maple Mono NF:pixelsize=16";
         dpi-aware = "yes";
       };
       cursor = {

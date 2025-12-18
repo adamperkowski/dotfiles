@@ -17,7 +17,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
-    nerd-fonts.fira-code
+    maple-mono.NF
 
     wl-clipboard
 
