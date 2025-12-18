@@ -67,4 +67,6 @@ function precmd() {
   else
     PROMPT="${vcs_info_msg_0_} ${nix_shell}${newline}${baseprompt}"
   fi
+
+  printf '\e[5 q'
 }

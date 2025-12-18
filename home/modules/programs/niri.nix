@@ -157,7 +157,7 @@
     binds = {
       "mod+shift+slash".action.show-hotkey-overlay = [ ];
 
-      "mod+return".action.spawn = [ "kitty" ];
+      "mod+return".action.spawn = [ "footclient" ];
       "mod+shift+return".action.spawn = [
         "rofi"
         "-show"

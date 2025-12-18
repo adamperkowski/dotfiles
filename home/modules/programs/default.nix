@@ -14,7 +14,7 @@
 
     ./swww.nix
     ./rofi.nix
-    ./kitty.nix
+    ./foot.nix
     ./dunst.nix
     ./quickshell.nix
 
