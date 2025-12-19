@@ -51,6 +51,7 @@
           remoteBranch = "magenta";
         };
 
+        commit.template = "~/.gitmessage";
         init.defaultBranch = "main";
       };
     };
@@ -61,4 +62,13 @@
     };
   };
 
+  home.file.".gitmessage".text = ''
+
+
+    # remember to set commit author to pr author when merging
+    # Reviewed-on:
+    # Reviewed-by: adam <me@adamperkowski.dev>
+    # Signed-off-by: adam <me@adamperkowski.dev>
+    # Co-authored-by: user <user@users.noreply.github.com>
+  '';
 }
