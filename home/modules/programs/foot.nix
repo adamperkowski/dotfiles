@@ -13,7 +13,7 @@ in
     settings = {
       main = {
         include = builtins.toString catppuccin;
-        font = "Maple Mono NF:pixelsize=16";
+        font = "Maple Mono NF:pixelsize=15";
         dpi-aware = "yes";
       };
       cursor = {

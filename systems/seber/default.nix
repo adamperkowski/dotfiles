@@ -4,6 +4,7 @@
   imports = [
     ./hardware.nix
     inputs.agenix.nixosModules.default
+    ./services
   ];
 
   boot.loader.grub = {
@@ -11,7 +12,13 @@
     device = "/dev/vda";
   };
 
-  networking.hostName = "seber";
+  networking = {
+    hostName = "seber";
+    firewall.allowedTCPPorts = [
+      80
+      443
+    ];
+  };
 
   time.timeZone = "UTC";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -20,13 +27,9 @@
     git
     vim
     htop
-    nodejs
   ];
 
-  networking.firewall.allowedTCPPorts = [
-    80
-    443
-  ];
+  services.nginx.enable = true;
 
   age = {
     identityPaths = [ "/home/adam/.ssh/id_ed25519" ];
@@ -46,101 +49,6 @@
         mode = "0440";
         group = "nginx";
       };
-    };
-  };
-
-  services.nginx = {
-    enable = true;
-    virtualHosts = {
-      "adam.qpon" = {
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8000";
-          extraConfig = ''
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host $host;
-          '';
-        };
-
-        onlySSL = true;
-        sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
-        sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
-      };
-
-      "vault.adamperkowski.dev" = {
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8222";
-          extraConfig = ''
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host $host;
-          '';
-        };
-
-        onlySSL = true;
-        sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
-        sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
-      };
-
-      "lebel.adamperkowski.dev" = {
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:14831";
-          extraConfig = ''
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header Host $host;
-
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-          '';
-        };
-        onlySSL = true;
-        sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
-        sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
-      };
-    };
-  };
-
-  services.vaultwarden = {
-    enable = true;
-    environmentFile = "/run/agenix/vaultwarden-env";
-    config = {
-      DOMAIN = "https://vault.adamperkowski.dev";
-      SIGNUPS_ALLOWED = false;
-      ROCKET_ADDRESS = "127.0.0.1";
-      ROCKET_PORT = 8222;
-      ROCKET_LOG = "critical";
-      LOG_LEVEL = "warn";
-    };
-  };
-
-  systemd.services.website = {
-    description = "my site :3";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig = {
-      ExecStart = "/var/website/website/bin/website";
-      WorkingDirectory = "/var/website";
-      Restart = "on-failure";
-      RestartSec = 10;
-    };
-  };
-
-  systemd.services.lebel = {
-    description = "lebel";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig = {
-      User = "adam";
-      Group = "users";
-      ExecStart = "${pkgs.nodejs}/bin/node --env-file /var/lebel/.env /var/lebel/build/main.js";
-      WorkingDirectory = "/var/lebel";
-      Restart = "on-failure";
-      RestartSec = 10;
     };
   };
 }
