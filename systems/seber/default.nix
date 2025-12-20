@@ -24,12 +24,24 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [
+    linuxquota
     git
     vim
     htop
   ];
 
   services.nginx.enable = true;
+
+  system.activationScripts.quotas = {
+    deps = [ ];
+    text = ''
+      echo
+      ${pkgs.linuxquota}/bin/quotacheck -aumv || true
+      ${pkgs.linuxquota}/bin/quotaon -auv || true
+      ${pkgs.linuxquota}/bin/setquota -u seba 8M 10M 0 0 / || true
+      echo
+    '';
+  };
 
   age = {
     identityPaths = [ "/home/adam/.ssh/id_ed25519" ];
