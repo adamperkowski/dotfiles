@@ -29,7 +29,7 @@
   };
 
   systemd.tmpfiles.rules = [
-    "Z /var/ebil.club/seba 0750 seba nginx -"
+    "Z /var/ebil.club/seba 0750 seba nginx"
     "d /var/ebil.club/seba/seba.ebil.club 0750 seba nginx -"
   ];
 }
