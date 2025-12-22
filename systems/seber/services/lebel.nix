@@ -20,7 +20,7 @@
 
   services.nginx.virtualHosts."lebel.ebil.club" = {
     locations = {
-      "= /".return = "301 https://witchsky.app/profile/did:plc:nwrcwcrhpkgrqqvkg3lmaqky";
+      "= /".return = "301 https://ebil.club";
       "/" = {
         proxyPass = "http://127.0.0.1:14831";
         extraConfig = ''

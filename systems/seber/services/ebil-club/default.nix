@@ -2,10 +2,13 @@
   imports = [ ./seba.nix ];
 
   services.nginx.virtualHosts."ebil.club" = {
-    locations."/" = {
-      root = "/var/ebil.club/ebil.club";
-      index = "index.html";
-      extraConfig = "try_files $uri $uri/ =404;";
+    locations = {
+      "/" = {
+        root = "/var/ebil.club/ebil.club";
+        index = "index.html";
+        extraConfig = "try_files $uri $uri/ =404;";
+      };
+      "/discord".return = "302 https://discord.gg/mJAQHPJ9Eb";
     };
     extraConfig = "error_page 404 /404.html;";
     onlySSL = true;
