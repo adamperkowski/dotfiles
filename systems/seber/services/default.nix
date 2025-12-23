@@ -3,6 +3,6 @@
     ./website.nix
     ./lebel.nix
     ./vaultwarden.nix
-    ./ebil-club
+    ./ebil-club.nix
   ];
 }
