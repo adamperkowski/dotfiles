@@ -67,6 +67,7 @@ in
   };
 
   systemd.tmpfiles.rules = [
+    "d /var/ebil.club 0755 - - -"
     "Z /var/ebil.club/ebil.club 0750 adam nginx"
     "d /var/ebil.club/ebil.club 0750 adam nginx -"
   ];
