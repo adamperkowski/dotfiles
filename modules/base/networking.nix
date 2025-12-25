@@ -42,11 +42,6 @@
         for ip in "''${v6blocklist[@]}"; do
           ensure_rule6 -s "$ip" -j DROP
         done
-
-        ensure_rule -p tcp --dport 22 -m conntrack --ctstate NEW \
-          -m recent --name SSH --rsource --update --seconds 120 --hitcount 10 -j DROP
-        ensure_rule -p tcp --dport 22 -m conntrack --ctstate NEW \
-          -m recent --name SSH --rsource --set
       '';
     };
   };

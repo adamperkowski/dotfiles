@@ -3,6 +3,7 @@
     enable = true;
     openFirewall = true;
     settings = {
+      LogLevel = "ERROR"; # haxerz OUT
       PubkeyAuthentication = true;
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
