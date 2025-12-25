@@ -1,6 +1,6 @@
 let
   adam = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID9feAlrIVPuVS28tz54/m7pZkjHHL5aVhV2qwBPPceT";
-  seber = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIXT/a7M/lYUEkWmRz+aTko8GPi0SVvabNx2NxflVpi3";
+  seber = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBAp82e57ij5x+Ei1Tjwxuex0fil5vV9wfEfNYgC5dFQ";
 in
 {
   "chromium.sh.age".publicKeys = [ adam ];

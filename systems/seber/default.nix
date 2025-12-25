@@ -47,7 +47,7 @@
   };
 
   age = {
-    identityPaths = [ "/home/adam/.ssh/id_ed25519" ];
+    identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     secrets = {
       vaultwarden-env = {
         file = ../../secrets/vaultwarden.env.age;
