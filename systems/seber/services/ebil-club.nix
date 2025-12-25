@@ -1,6 +1,12 @@
 { lib, pkgs, ... }:
 
 let
+  tls = {
+    onlySSL = true;
+    sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
+    sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
+  };
+
   mkSite =
     {
       name,
@@ -13,12 +19,6 @@ let
 
       home = "/var/ebil.club/${name}";
       rootDir = "${home}/${defaultHost}";
-
-      tls = {
-        onlySSL = true;
-        sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
-        sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
-      };
     in
     {
       services.nginx.virtualHosts = {
@@ -80,19 +80,25 @@ in
     })
   ];
 
-  services.nginx.virtualHosts."ebil.club" = {
-    locations = {
-      "/" = {
-        root = "/var/ebil.club/ebil.club";
-        index = "index.html";
-        extraConfig = "try_files $uri $uri/ =404;";
+  services.nginx.virtualHosts = {
+    "_" = {
+      locations."/".return = "307 https://ebil.club";
+      default = true;
+    }
+    // tls;
+
+    "ebil.club" = {
+      locations = {
+        "/" = {
+          root = "/var/ebil.club/ebil.club";
+          index = "index.html";
+          extraConfig = "try_files $uri $uri/ =404;";
+        };
+        "/discord".return = "302 https://discord.gg/mJAQHPJ9Eb";
       };
-      "/discord".return = "302 https://discord.gg/mJAQHPJ9Eb";
-    };
-    extraConfig = "error_page 404 /404.html;";
-    onlySSL = true;
-    sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
-    sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
+      extraConfig = "error_page 404 /404.html;";
+    }
+    // tls;
   };
 
   systemd.tmpfiles.rules = [
