@@ -40,5 +40,5 @@
     sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
   };
 
-  systemd.tmpfiles.rules = [ "d /var/lebel 0750 adam users -" ];
+  systemd.tmpfiles.rules = [ "d /var/lebel 2750 adam users -" ];
 }

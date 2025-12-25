@@ -24,6 +24,7 @@ let
         groups."${name}" = { };
         users."${name}" = {
           inherit home;
+          createHome = false;
           isNormalUser = true;
           hashedPassword = "!";
           group = name;
@@ -34,8 +35,8 @@ let
       };
 
       systemd.tmpfiles.rules = [
-        "Z ${home} 0750 ${name} nginx"
-        "d ${home}/${host} 0750 ${name} nginx -"
+        "d ${home} 0750 ${name} nginx -"
+        "d ${home}/${host} 2750 ${name} nginx -"
       ];
     };
 in
@@ -67,8 +68,7 @@ in
   };
 
   systemd.tmpfiles.rules = [
-    "d /var/ebil.club 0755 - - -"
-    "Z /var/ebil.club/ebil.club 0750 adam nginx"
-    "d /var/ebil.club/ebil.club 0750 adam nginx -"
+    "d /var/ebil.club 0755 root root -"
+    "d /var/ebil.club/ebil.club 2750 adam nginx -"
   ];
 }

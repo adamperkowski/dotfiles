@@ -16,5 +16,5 @@
     };
   };
 
-  systemd.tmpfiles.rules = [ "d /var/mimi 0750 adam users -" ];
+  systemd.tmpfiles.rules = [ "d /var/mimi 2750 adam users -" ];
 }
