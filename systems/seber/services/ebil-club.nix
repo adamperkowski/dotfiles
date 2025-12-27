@@ -2,7 +2,7 @@
 
 let
   tls = {
-    onlySSL = true;
+    forceSSL = true;
     sslCertificate = "/run/agenix/ssl-adamperkowski-cert";
     sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
   };
