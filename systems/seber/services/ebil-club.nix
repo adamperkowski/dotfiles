@@ -24,10 +24,23 @@ let
       services.nginx.virtualHosts = {
         "${servedHost}" = (
           {
-            locations."/" = {
-              root = rootDir;
-              index = "index.html";
-              extraConfig = "try_files $uri $uri/ =404;";
+            locations = {
+              "/" = {
+                root = rootDir;
+                index = "index.html";
+                extraConfig = ''
+                  if ($http_user_agent ~* "curl") {
+                    rewrite ^ /index.txt last;
+                  }
+                  try_files $uri $uri/ =404;
+                '';
+              };
+              "/index.txt" = {
+                root = rootDir;
+                extraConfig = "try_files /index.txt @curl_fallback;";
+              };
+              "@curl_fallback".return =
+                "200 'hi! this site is best viewed in a web browser :3 if u still want to curl it, try setting a different user-agent header'";
             };
             extraConfig = "error_page 404 /404.html;";
           }
