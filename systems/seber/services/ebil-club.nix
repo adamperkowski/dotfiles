@@ -107,7 +107,6 @@ in
           index = "index.html";
           extraConfig = "try_files $uri $uri/ =404;";
         };
-        "/discord".return = "302 https://discord.gg/mJAQHPJ9Eb";
       };
       extraConfig = "error_page 404 /404.html;";
     }
