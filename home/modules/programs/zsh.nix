@@ -35,7 +35,7 @@ in
 
       nixb = "nom build";
       nixs = "FF_SKIP=1 nom shell";
-      nixdev = "FF_SKIP=1 nom develop -c $SHELL";
+      nixdev = "FF_SKIP=1 nom develop -c \"$SHELL\"";
 
       diff = "diff --color=auto";
       grep = "grep --color=auto";

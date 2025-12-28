@@ -11,4 +11,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID9feAlrIVPuVS28tz54/m7pZkjHHL5aVhV2qwBPPceT adam"
     ];
   };
+
+  systemd.tmpfiles.rules = [ "d /tmp/downloads 2700 adam users -" ];
 }
