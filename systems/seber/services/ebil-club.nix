@@ -88,7 +88,7 @@ in
     })
     (mkSite {
       name = "robin";
-      sshPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKKxTuK2A7wbXnjkIhDrze4B5Uj2rnpmPAWGjPDMPiyk";
+      sshPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDeSHaoF0Qs1G8JO/enOo2vxzkvvOqAMZPG2DX7TgG8u";
       canonical = "robinwobin.dev";
     })
   ];
