@@ -28,11 +28,13 @@ let
               "/" = {
                 root = rootDir;
                 index = "index.html";
+                extraConfig = "try_files $uri $uri/ =404;";
+              };
+              "= /" = {
                 extraConfig = ''
                   if ($http_user_agent ~* "curl") {
-                    rewrite ^ /index.txt last;
+                    return 302 /index.txt;
                   }
-                  try_files $uri $uri/ =404;
                 '';
               };
               "/index.txt" = {
