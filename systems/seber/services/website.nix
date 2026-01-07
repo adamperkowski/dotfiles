@@ -12,7 +12,7 @@
     };
   };
 
-  services.nginx.virtualHosts."adam.qpon" = {
+  services.nginx.virtualHosts."koi.rip" = {
     locations."/" = {
       proxyPass = "http://127.0.0.1:8000";
       extraConfig = ''
