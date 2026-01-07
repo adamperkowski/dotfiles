@@ -12,7 +12,7 @@
     };
 
     anvim = {
-      url = "github:adamperkowski/anvim";
+      url = "https://codeberg.org/adamperkowski/anvim/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -13,8 +13,6 @@
   time.timeZone = "Europe/Warsaw";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  hardware.graphics.enable = true;
-
   services.xserver = {
     xkb = {
       layout = "us";
@@ -24,11 +22,18 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    open = true;
-    nvidiaSettings = false;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = true;
+      open = true;
+      nvidiaSettings = false;
+    };
   };
 
   programs.steam = {
