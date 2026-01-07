@@ -67,8 +67,8 @@
 
     # remember to set commit author to pr author when merging
     # Reviewed-on:
-    # Reviewed-by: koi <me@adamperkowski.dev>
-    # Signed-off-by: koi <me@adamperkowski.dev>
+    # Reviewed-by: koi <me@koi.rip>
+    # Signed-off-by: koi <me@koi.rip>
     # Co-authored-by: user <user@users.noreply.github.com>
   '';
 }
