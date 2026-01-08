@@ -11,7 +11,7 @@
       ];
       trusted-users = [
         "root"
-        "adam"
+        "koi"
       ];
     };
   };

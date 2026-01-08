@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -55,7 +55,7 @@
   ];
 
   age = {
-    identityPaths = [ "/home/adam/.ssh/id_ed25519" ];
+    identityPaths = [ "${config.users.users.koi.home}/.ssh/id_ed25519" ];
 
     secrets.cloudflared = {
       file = ../../secrets/cloudflared.pem.age;

@@ -117,6 +117,6 @@ in
 
   systemd.tmpfiles.rules = [
     "d /var/ebil.club 0755 root root -"
-    "d /var/ebil.club/ebil.club 2750 adam nginx -"
+    "d /var/ebil.club/ebil.club 2750 koi nginx -"
   ];
 }

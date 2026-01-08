@@ -13,5 +13,5 @@
     ./services
   ];
 
-  users.users.adam.shell = pkgs.zsh;
+  users.users.koi.shell = pkgs.zsh;
 }

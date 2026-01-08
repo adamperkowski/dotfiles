@@ -9,7 +9,7 @@
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      User = "adam";
+      User = "koi";
       Group = "users";
       ExecStart = "${pkgs.nodejs}/bin/node --env-file /var/lebel/.env /var/lebel/build/main.js";
       WorkingDirectory = "/var/lebel";
@@ -40,5 +40,5 @@
     sslCertificateKey = "/run/agenix/ssl-adamperkowski-key";
   };
 
-  systemd.tmpfiles.rules = [ "d /var/lebel 2750 adam users -" ];
+  systemd.tmpfiles.rules = [ "d /var/lebel 2750 koi users -" ];
 }

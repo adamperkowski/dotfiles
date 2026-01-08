@@ -9,6 +9,6 @@
         inputs
         ;
     }; # TODO: optimize maybe
-    users.adam = import ../home/adam.nix;
+    users.koi = import ../home/koi.nix;
   };
 }

@@ -1,5 +1,5 @@
 { config, ... }:
 
 {
-  users.users.root.hashedPassword = config.users.users.adam.hashedPassword;
+  users.users.root.hashedPassword = config.users.users.koi.hashedPassword;
 }

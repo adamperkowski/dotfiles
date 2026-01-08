@@ -1,6 +1,6 @@
 {
   imports = [
-    ./adam.nix
+    ./koi.nix
     ./root.nix
   ];
 

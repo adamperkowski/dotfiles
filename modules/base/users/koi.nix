@@ -1,5 +1,5 @@
 {
-  users.users.adam = {
+  users.users.koi = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$kpXvXU/Ftx9qI9LKssnpY/$mGPO35iEUCb8/.bdYA/Zys3MuIaNSlrnUY2S6wCoFD8";
     ignoreShellProgramCheck = true;
@@ -8,9 +8,9 @@
       "jellyfin"
     ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID9feAlrIVPuVS28tz54/m7pZkjHHL5aVhV2qwBPPceT adam"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID9feAlrIVPuVS28tz54/m7pZkjHHL5aVhV2qwBPPceT koi"
     ];
   };
 
-  systemd.tmpfiles.rules = [ "d /tmp/downloads 2700 adam users -" ];
+  systemd.tmpfiles.rules = [ "d /tmp/downloads 2700 koi users -" ];
 }
