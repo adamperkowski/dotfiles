@@ -12,12 +12,12 @@
     };
 
     anvim = {
-      url = "https://codeberg.org/adamperkowski/anvim/archive/main.tar.gz";
+      url = "https://codeberg.org/koibtw/anvim/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     cuteff = {
-      url = "https://codeberg.org/adamperkowski/cuteff/archive/main.tar.gz";
+      url = "https://codeberg.org/koibtw/cuteff/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

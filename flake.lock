@@ -35,15 +35,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1767360414,
-        "narHash": "sha256-QOmIMMbJD3iyHCllLAPidfXPV5YwAog8V9FfGnjtJY8=",
-        "rev": "30fd6ea8e512ac5ba79937bfa25bcb1fc19195d4",
+        "lastModified": 1767819707,
+        "narHash": "sha256-RDbYz2JhhlidUOSevhHAf8RYnRTV7xNnsPH9Wc0W9PE=",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/adamperkowski/anvim/archive/30fd6ea8e512ac5ba79937bfa25bcb1fc19195d4.tar.gz?rev=30fd6ea8e512ac5ba79937bfa25bcb1fc19195d4"
+        "url": "https://codeberg.org/koibtw/anvim/archive/main.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://codeberg.org/adamperkowski/anvim/archive/main.tar.gz"
+        "url": "https://codeberg.org/koibtw/anvim/archive/main.tar.gz"
       }
     },
     "cuteff": {
@@ -57,11 +56,11 @@
         "narHash": "sha256-rOQZos+yJSiHg+G4iB9lXO+u7PPFYgkV/65b6yPS2w0=",
         "rev": "71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/adamperkowski/cuteff/archive/71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8.tar.gz?rev=71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8"
+        "url": "https://codeberg.org/api/v1/repos/koibtw/cuteff/archive/71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8.tar.gz?rev=71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8"
       },
       "original": {
         "type": "tarball",
-        "url": "https://codeberg.org/adamperkowski/cuteff/archive/main.tar.gz"
+        "url": "https://codeberg.org/koibtw/cuteff/archive/main.tar.gz"
       }
     },
     "darwin": {
