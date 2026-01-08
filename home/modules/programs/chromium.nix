@@ -4,7 +4,6 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "fgmjlmbojbkmdpofahffgcpkhkngfpef" # Startpage
       "jegbdohdgebjljoljfeinojeobdabpjo" # Redirector
       "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard AdBlocker
       "nngceckbapebfimnlniiiahkandclblb" # Bitwarden Password Manager

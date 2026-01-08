@@ -9,9 +9,18 @@
       profiles.user.user_id = "@koi:system72.dev";
       dirs.downloads = "/tmp/downloads";
       settings = {
+        user_gutter_width = 20;
         username_display = "displayname";
+        typing_notice_send = false;
         notifications.enabled = true;
-        image_preview.protocol.type = "kitty";
+        image_preview.protocol.type = "sixel";
+        layout.style = "restore";
+        sort.rooms = [
+          "favorite"
+          "recent"
+          "unread"
+          "name"
+        ];
       };
     };
   };
