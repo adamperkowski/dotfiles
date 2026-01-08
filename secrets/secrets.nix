@@ -6,7 +6,6 @@ in
   "chromium.sh.age".publicKeys = [ koi ];
   "cloudflared.pem.age".publicKeys = [ koi ];
   "jellyfin-rpc.json.age".publicKeys = [ koi ];
-  "wakatime.cfg.age".publicKeys = [ koi ];
 
   "vaultwarden.env.age".publicKeys = [ seber ];
   "ssl-adamperkowski.cert.pem.age".publicKeys = [ seber ];

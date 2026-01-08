@@ -17,10 +17,4 @@
     bash-language-server
     nixd
   ];
-
-  age.secrets.wakatime = {
-    file = ../../../secrets/wakatime.cfg.age;
-    mode = "0400";
-    path = "${config.home.homeDirectory}/.wakatime.cfg";
-  };
 }
