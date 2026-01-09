@@ -2,6 +2,7 @@ let
   configs = ../../external/config;
   scripts = ../../external/scripts;
   cargoConfig = ../../external/cargo.toml;
+  npmConfig = ../../external/npmrc;
 in
 {
   home.file = builtins.listToAttrs (
@@ -17,6 +18,12 @@ in
         name = ".cargo/config.toml";
         value = {
           source = cargoConfig;
+        };
+      }
+      {
+        name = ".npmrc";
+        value = {
+          source = npmConfig;
         };
       }
     ]
