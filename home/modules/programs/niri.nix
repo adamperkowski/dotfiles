@@ -13,7 +13,7 @@
       { argv = [ "swww img ~/.wallpaper.jpg" ]; }
     ];
 
-    screenshot-path = "~/screenshots/%Y-%m-%d_%H-%M-%S.png";
+    screenshot-path = "/tmp/screenshots/%s.png";
     prefer-no-csd = true;
 
     cursor = {
