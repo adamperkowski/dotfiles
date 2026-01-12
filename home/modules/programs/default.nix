@@ -9,6 +9,7 @@
     ./zoxide.nix
     ./neovim.nix
     ./cuteff.nix
+    ./jujutsu.nix
     ./jellyfin-rpc.nix
 
     ./niri.nix
