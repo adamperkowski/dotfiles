@@ -93,6 +93,11 @@ in
       sshPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDeSHaoF0Qs1G8JO/enOo2vxzkvvOqAMZPG2DX7TgG8u";
       canonical = "robinwobin.dev";
     })
+    (mkSite {
+      name = "evergarden";
+      sshPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAyvnWmxdPq+ztt2GevfT+Yc4E6X/uSHc4tfD2nwc1vq";
+      canonical = "evergarden.moe";
+    })
   ];
 
   services.nginx.virtualHosts = {
