@@ -40,14 +40,27 @@ in
   services.nginx.virtualHosts = {
     "robinwobin.dev" = (
       {
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8008";
-          extraConfig = ''
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host $host;
-          '';
+        locations = {
+          "/" = {
+            root = "/var/ebil.club/robin/robin.ebil.club";
+            index = "index.html";
+            extraConfig = "try_files $uri $uri/ =404;";
+          };
+          "= /" = {
+            extraConfig = ''
+              if ($http_user_agent ~* "curl") {
+                return 302 /index.txt;
+              }
+            '';
+          };
+          "/index.txt" = {
+            root = "/var/ebil.club/robin/robin.ebil.club";
+            extraConfig = "try_files /index.txt @curl_fallback;";
+          };
+          "@curl_fallback".return =
+            "200 'hi! this site is best viewed in a web browser :3 if u still want to curl it, try setting a different user-agent header'";
         };
+        extraConfig = "error_page 404 /404.html;";
       }
       // tls
     );
@@ -58,4 +71,28 @@ in
       // tls
     );
   };
+
+  /*
+    services.nginx.virtualHosts = {
+      "robinwobin.dev" = (
+        {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:8008";
+            extraConfig = ''
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header Host $host;
+            '';
+          };
+        }
+        // tls
+      );
+      "robin.ebil.club" = (
+        {
+          locations."/".return = "307 https://robinwobin.dev$request_uri";
+        }
+        // tls
+      );
+    };
+  */
 }
