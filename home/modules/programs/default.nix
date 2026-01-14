@@ -1,6 +1,7 @@
 {
   imports = [
     ./fd.nix
+    ./gpg.nix
     ./git.nix
     ./fzf.nix
     ./zsh.nix
