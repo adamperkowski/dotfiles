@@ -93,6 +93,7 @@
         ViewRaw.enabled = true;
         VolumeBooster.enabled = true;
         WhoReacted.enabled = true;
+        YoutubeAdblock.enabled = true;
       };
     };
   };
