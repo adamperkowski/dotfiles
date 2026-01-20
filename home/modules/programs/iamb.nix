@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   programs.iamb = {
@@ -7,7 +12,7 @@
 
     settings = {
       profiles.user.user_id = "@koi:system72.dev";
-      dirs.downloads = "/tmp/downloads";
+      dirs.downloads = config.xdg.userDirs.download;
       settings = {
         user_gutter_width = 20;
         username_display = "displayname";

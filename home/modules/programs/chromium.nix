@@ -21,11 +21,4 @@
     mode = "0500";
     path = "${config.home.homeDirectory}/.local/bin/chromium";
   };
-
-  home.sessionVariables.DEFAULT_BROWSER = "chromium";
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = [ "chromium-browser.desktop" ];
-    "x-scheme-handler/http" = [ "chromium-browser.desktop" ];
-    "x-scheme-handler/https" = [ "chromium-browser.desktop" ];
-  };
 }

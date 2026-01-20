@@ -23,5 +23,6 @@
 
     ./vesktop.nix
     ./chromium.nix
+    ./zen-browser.nix
   ];
 }

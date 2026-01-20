@@ -307,7 +307,8 @@
         "iamb": "iamb",
         "niri": "niri",
         "nixpkgs": "nixpkgs_2",
-        "systems": "systems_2"
+        "systems": "systems_2",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
@@ -388,6 +389,30 @@
       "original": {
         "owner": "Supreeeme",
         "repo": "xwayland-satellite",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768847523,
+        "narHash": "sha256-Rpe8L91vImYuAH5Ct5S0Ua/AVYWEx2iwbSw5/zo0DlE=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "c46511888bcce28b5b54a82cb41d0ef75cd93965",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "ref": "beta",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
