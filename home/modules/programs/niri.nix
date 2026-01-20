@@ -10,7 +10,7 @@
 
   programs.niri.settings = {
     spawn-at-startup = [
-      { argv = [ "swww img ~/.wallpaper.jpg" ]; }
+      { argv = [ "swww img ~/.wallpaper.png" ]; }
     ];
 
     screenshot-path = "/tmp/screenshots/%s.png";
@@ -71,9 +71,9 @@
       border = {
         enable = true;
         width = 2;
-        active.color = "#b4befe";
-        inactive.color = "#313244";
-        urgent.color = "#cba6f7";
+        active.color = "#cbe3b3";
+        inactive.color = "#2B3337";
+        urgent.color = "#f5d098";
       };
     };
 

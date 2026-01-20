@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 let
-  catppuccin = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/catppuccin/foot/8d263e0e6b58a6b9ea507f71e4dbf6870aaf8507/themes/catppuccin-mocha.ini";
-    hash = "sha256-rVWISDKhJfH1mbEkFEQ6JSq3fFmZk86EJgKS694LbOs=";
+  evergarden = pkgs.fetchurl {
+    url = "https://codeberg.org/evergarden/foot/raw/commit/7a3c989a4a3b8c511206596be972dfa147878973/themes/evergarden-fall-green.ini";
+    hash = "sha256-TMdNTqjIqXHNXJ/A7K1lMr79wbYTpDvyRWBlGrCcOyI=";
   };
 in
 {
@@ -12,7 +12,7 @@ in
     server.enable = true;
     settings = {
       main = {
-        include = builtins.toString catppuccin;
+        include = builtins.toString evergarden;
         font = "Maple Mono NF:pixelsize=15";
         dpi-aware = "yes";
       };
@@ -20,7 +20,6 @@ in
         style = "beam";
         blink = "yes";
       };
-      colors.cursor = "11111b b4befe";
     };
   };
 }

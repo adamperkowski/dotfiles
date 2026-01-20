@@ -1,0 +1,28 @@
+* {
+  rosewater: #f6cee5;
+  flamingo:#f6cee5;
+  pink: #f3c0e5;
+  mauve: #d2bdf3;
+  red: #f57f82;
+  maroon: #f57f82;
+  peach: #f7a182;
+  yellow: #f5d098;
+  green: #cbe3b3;
+  teal: #b3e3ca;
+  sky: #b3e6db;
+  sapphire: #afd9e6;
+  blue: #b2caed;
+  lavender: #b2caed;
+  text: #f8f9e8;
+  subtext1: #adc9bc;
+  subtext0: #96b4aa;
+  overlay2: #839e9a;
+  overlay1: #6f8788;
+  overlay0: #58686d;
+  surface2: #4a585c;
+  surface1: #374145;
+  surface0: #2B3337;
+  base: #232A2E;
+  mantle: #1C2225;
+  crust: #171c1f;
+}

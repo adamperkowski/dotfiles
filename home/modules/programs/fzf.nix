@@ -4,21 +4,21 @@
     enableZshIntegration = true;
 
     colors = {
-      bg = "#1e1e2e";
-      "bg+" = "#313244";
-      selected-bg = "#45475a";
-      fg = "#cdd6f4";
-      "fg+" = "#cdd6f4";
-      label = "#cdd6f4";
-      hl = "#cba6f7";
-      "hl+" = "#cba6f7";
-      header = "#f38ba8";
-      info = "#b4befe";
-      prompt = "#b4befe";
-      border = "#6c7086";
-      marker = "#a6adc8";
-      pointer = "#a6adc8";
-      spinner = "#a6adc8";
+      bg = "#232a2e";
+      "bg+" = "#2b3337";
+      selected-bg = "#374145";
+      fg = "#f8f9e8";
+      "fg+" = "#f8f9e8";
+      label = "#f8f9e8";
+      hl = "#f5d098";
+      "hl+" = "#f5d098";
+      header = "#f57f82";
+      info = "#cbe3b3";
+      prompt = "#cbe3b3";
+      border = "#2b3337";
+      marker = "#96b4aa";
+      pointer = "#96b4aa";
+      spinner = "#96b4aa";
     };
 
     defaultOptions = [

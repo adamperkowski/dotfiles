@@ -1,0 +1,96 @@
+:root {
+  --v-red: #F57F82;
+  --v-orange: #F7A182;
+  --v-yellow: #F5D098;
+  --v-lime: #DBE6AF;
+  --v-green: #CBE3B3;
+  --v-aqua: #B3E3CA;
+  --v-skye: #B3E6DB;
+  --v-snow: #AFD9E6;
+  --v-blue: #B2CAED;
+  --v-purple: #D2BDF3;
+  --v-pink: #F3C0E5;
+  --v-cherry: #F6CEE5;
+  --v-text: #F8F9E8;
+  --v-subtext1: #ADC9BC;
+  --v-subtext0: #96B4AA;
+  --v-overlay2: #839E9A;
+  --v-overlay1: #6F8788;
+  --v-overlay0: #58686D;
+  --v-surface2: #4A585C;
+  --v-surface1: #374145;
+  --v-surface0: #2B3337;
+  --v-base: #232A2E;
+  --v-mantle: #1C2225;
+  --v-crust: #171C1F;
+}
+
+:root,
+body {
+  --zen-primary-color: var(--v-mantle) !important;
+  --zen-main-browser-background: var(--v-mantle) !important;
+  --zen-toolbar-element-bg: var(--v-surface0) !important;
+
+  --tab-selected-bgcolor: var(--v-surface1) !important;
+  --toolbox-textcolor: var(--v-text) !important;
+  --sidebar-text-color: var(--v-overlay2) !important;
+  --toolbarbutton-icon-fill: var(--v-overlay1) !important;
+
+  --zen-toolbar-element-bg: var(--v-surface0) !important;
+
+  --toolbar-field-focus-color: var(--v-overlay1) !important;
+}
+
+/* transparent bg */
+/* #zen-main-app-wrapper { */
+/*   background: transparent !important; */
+/*   --zen-background-opacity: 0.9; */
+/* } */
+
+/* &::after { */
+/*   background: color-mix(in hsl, var(--zen-main-browser-background), transparent 10%); */
+/*   opacity: var(); */
+/*   transition: 0s; */
+/* } */
+
+.tabbrowser-tab {
+  --tab-selected-bgcolor: var(--v-surface1) !important;
+}
+
+::selection {
+  background: var(--v-surface1) !important;
+}
+
+label.toolbarbutton-text {
+  color: var(--v-overlay1) !important;
+}
+
+label.zen-current-workspace-indicator-name {
+  color: var(--v-subtext1) !important;
+}
+
+#urlbar {
+  --urlbarView-separator-color: var(--v-overlay0) !important;
+
+  &[breakout-extend="true"] .urlbar-background {
+    --zen-urlbar-background-base: var(--v-mantle) !important;
+
+    background-color: var(--zen-urlbar-background-transparent, var(--zen-urlbar-background-base)) !important;
+    border-color: var(--urlbarView-separator-color) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+}
+
+.urlbar-input {
+  color: var(--v-text) !important;
+
+  /* FIXME */
+  * {
+    color: var(--v-overlay1) !important;
+    opacity: 1 !important;
+  }
+}
+
+.urlbarView-row[selected] {
+  --zen-selected-bg: var(--v-surface1) !important;
+}

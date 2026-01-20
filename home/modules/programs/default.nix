@@ -3,6 +3,7 @@
     ./fd.nix
     ./gpg.nix
     ./git.nix
+    ./eza.nix
     ./fzf.nix
     ./zsh.nix
     ./iamb.nix
@@ -22,7 +23,6 @@
     ./quickshell.nix
 
     ./vesktop.nix
-    ./chromium.nix
     ./zen-browser.nix
   ];
 }

@@ -13,25 +13,27 @@
         offset = "(0,0)";
         font = "Maple Mono NF 10";
 
-        frame_color = "#b4befe";
+        background = "#232a2e";
+        foreground = "#f8f9e8";
+        frame_color = "#cbe3b3";
         separator_color = "frame";
-        highlight = "#cba6f7";
+        highlight = "#f5d098";
       };
 
       urgency_low = {
-        background = "#1e1e2e";
-        foreground = "#cdd6f4";
+        background = "#232a2e";
+        foreground = "#f8f9e8";
       };
 
       urgency_normal = {
-        background = "#1e1e2e";
-        foreground = "#cdd6f4";
+        background = "#232a2e";
+        foreground = "#f8f9e8";
       };
 
       urgency_critical = {
-        background = "#1e1e2e";
-        foreground = "#cdd6f4";
-        frame_color = "#eba0ac";
+        background = "#232a2e";
+        foreground = "#f8f9e8";
+        frame_color = "#f57f82";
       };
     };
   };

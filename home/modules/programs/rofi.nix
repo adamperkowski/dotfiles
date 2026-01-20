@@ -1,10 +1,7 @@
 { pkgs, ... }:
 
 let
-  catppuccinMocha = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/catppuccin/rofi/71fb15577ccb091df2f4fc1f65710edbc61b5a53/themes/catppuccin-mocha.rasi";
-    hash = "sha256-iyh6RcbIw5tX1PdzMmOLYvYjA2YVqdfJ/J6lJZgHdkY=";
-  };
+  evergarden = ../../../external/rofi-evergarden.rasi;
   catppuccinConfig = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/rofi/71fb15577ccb091df2f4fc1f65710edbc61b5a53/catppuccin-default.rasi";
     hash = "sha256-v2DtDReDvkJ70rdbF5ldH9mS6acLlrg7Q3L6nJU3ebg=";
@@ -17,7 +14,7 @@ in
 
     # cool hack lmao
     theme = ''
-      ${catppuccinMocha}"
+      ${evergarden}"
       @import "${catppuccinConfig}'';
   };
 }

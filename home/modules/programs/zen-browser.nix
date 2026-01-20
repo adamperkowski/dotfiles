@@ -12,11 +12,31 @@
       search = {
         force = true;
         default = "searxng";
-        engines.searxng = {
-          name = "SearXNG";
-          iconMapObj."261" = "https://searxng.system72.dev/static/themes/simple/img/favicon.png";
-          definedAliases = [ "@searxng" ];
-          urls = [ { template = "https://searxng.system72.dev/search?q={searchTerms}"; } ];
+        engines = {
+          searxng = {
+            name = "SearXNG";
+            definedAliases = [ "@searxng" ];
+            urls = [ { template = "https://searxng.system72.dev/search?q={searchTerms}"; } ];
+            iconMapObj."261" = "https://searxng.system72.dev/static/themes/simple/img/favicon.png";
+          };
+          nixpkgs = {
+            name = "Nixpkgs";
+            definedAliases = [ "@nixpkgs" ];
+            urls = [ { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; } ];
+            iconMapObj."16" = "https://search.nixos.org/favicon.png";
+          };
+          nixos = {
+            name = "NixOS Options";
+            definedAliases = [ "@nixos" ];
+            urls = [ { template = "https://search.nixos.org/options?type=options&query={searchTerms}"; } ];
+            iconMapObj."16" = "https://search.nixos.org/favicon.png";
+          };
+          mynixos = {
+            name = "MyNixOS";
+            definedAliases = [ "@mynixos" ];
+            urls = [ { template = "https://mynixos.com/search?q={searchTerms}"; } ];
+            iconMapObj."32" = "https://mynixos.com/favicon.ico";
+          };
         };
       };
       settings = {
@@ -38,22 +58,7 @@
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
         "layout.css.prefers-color-scheme.content-override" = 0; # dark mode
       };
-      userChrome = ''
-        :root {
-          --zen-main-browser-background: #191E21 !important;
-          --zen-toolbar-element-bg: #262F33 !important;
-          --tab-selected-bgcolor: #374145 !important;
-          --toolbox-textcolor: #F8F9E8 !important;
-          --sidebar-text-color: #839e9a !important;
-          --toolbarbutton-icon-fill: #6F8788 !important;
-        }
-        label.toolbarbutton-text {
-          color: #6F8788 !important;
-        }
-        label.zen-current-workspace-indicator-name {
-          color: #ADC9BC !important;
-        }
-      '';
+      userChrome = builtins.readFile ../../../external/userChrome.css;
     };
 
     policies =

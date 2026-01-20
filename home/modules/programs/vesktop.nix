@@ -3,13 +3,13 @@
     enable = true;
     settings = {
       arRPC = true;
-      splashBackground = "#1e1e2e";
-      splashColor = "#cdd6f4";
+      splashBackground = "#232a2e";
+      splashColor = "#f8f9e8";
       splashTheming = true;
     };
     vencord.settings = {
       useQuickCss = true;
-      themeLinks = [ "https://catppuccin.github.io/discord/dist/catppuccin-mocha-lavender.theme.css" ];
+      themeLinks = [ "https://everviolet.github.io/discord/themes/evergarden-fall-green.theme.css" ];
       plugins = {
         AlwaysExpandRoles.enabled = true;
         AlwaysTrust = {

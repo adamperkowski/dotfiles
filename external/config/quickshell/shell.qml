@@ -7,11 +7,11 @@ import "Services/Niri"
 ShellRoot {
   id: root
 
-  property color colBase: "#1e1e2e"
-  property color colText: "#cdd6f4"
-  property color colOverlay: "#6c7086"
-  property color colAccent: "#b4befe"
-  property color colSecond: "#cba6f7"
+  property color colBase: "#232a2e"
+  property color colText: "#f8f9e8"
+  property color colOverlay: "#58686d"
+  property color colAccent: "#cbe3b3"
+  property color colSecond: "#f5d098"
 
   property string fontFamily: "Maple Mono NF"
   property int fontSize: 14

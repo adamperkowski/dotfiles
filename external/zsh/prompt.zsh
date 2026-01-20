@@ -9,7 +9,7 @@ autoload -Uz vcs_info
 
 setopt nopromptsubst
 
-local accent=$'\e[0;38;2;180;190;254m'
+local accent=$'\e[0;38;2;203;227;179m'
 local dim=$'\e[2m'
 local reset=$'\e[0m'
 local newline=$'\n'

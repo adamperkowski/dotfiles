@@ -4,6 +4,7 @@ let
   external = ../../../external/zsh;
 in
 {
+  home.shell.enableZshIntegration = true;
   programs.zsh = {
     enable = true;
 
@@ -42,9 +43,9 @@ in
       ip = "ip -color=auto";
       ping = "prettyping";
 
-      ls = "lsd -hN";
-      la = "lsd -lahN";
-      ll = "lsd -llhN";
+      ls = "eza";
+      la = "eza -la";
+      ll = "eza -l";
 
       gap = "git add --patch";
       ga = "git add";

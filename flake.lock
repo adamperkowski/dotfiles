@@ -35,11 +35,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768305053,
-        "narHash": "sha256-2ZduskzDupOrSnH3SxhoeVjFFWqRSUWHoO1HMKx6nEI=",
-        "rev": "be48a546591dd43a60c63372319f0212d2fb3655",
+        "lastModified": 1769004762,
+        "narHash": "sha256-huSRoQwd4+cirmXs6tQO6+iQ7MjR8cgujEa0UTMgDu0=",
+        "rev": "0fd67c2d6d1c75fefcffa8cdc9991a3e212d9b74",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/koibtw/anvim/archive/be48a546591dd43a60c63372319f0212d2fb3655.tar.gz?rev=be48a546591dd43a60c63372319f0212d2fb3655"
+        "url": "https://codeberg.org/api/v1/repos/koibtw/anvim/archive/0fd67c2d6d1c75fefcffa8cdc9991a3e212d9b74.tar.gz?rev=0fd67c2d6d1c75fefcffa8cdc9991a3e212d9b74"
       },
       "original": {
         "type": "tarball",
@@ -53,11 +53,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766788905,
-        "narHash": "sha256-rOQZos+yJSiHg+G4iB9lXO+u7PPFYgkV/65b6yPS2w0=",
-        "rev": "71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8",
+        "lastModified": 1768947991,
+        "narHash": "sha256-Eg/0qQccLKXaFHhKCd8gJ/ZdxCSNcWhj31SAdl76bL8=",
+        "rev": "11a4d1eada9f983f44f2ca7ee37a22da72a3a7e4",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/koibtw/cuteff/archive/71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8.tar.gz?rev=71c9288c5d981f981bb6a42e5bc17a14dc2e9eb8"
+        "url": "https://codeberg.org/api/v1/repos/koibtw/cuteff/archive/11a4d1eada9f983f44f2ca7ee37a22da72a3a7e4.tar.gz?rev=11a4d1eada9f983f44f2ca7ee37a22da72a3a7e4"
       },
       "original": {
         "type": "tarball",

@@ -7,7 +7,6 @@
     jellyfin-tui
     prettyping
     playerctl
-    lsd
     jq
     gh
     codeberg-cli
