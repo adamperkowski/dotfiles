@@ -44,8 +44,8 @@ in
       ping = "prettyping";
 
       ls = "eza";
-      la = "eza -la";
-      ll = "eza -l";
+      ll = "eza -lg";
+      la = "eza -lga";
 
       gap = "git add --patch";
       ga = "git add";

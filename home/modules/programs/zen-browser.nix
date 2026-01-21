@@ -28,7 +28,7 @@
           nixos = {
             name = "NixOS Options";
             definedAliases = [ "@nixos" ];
-            urls = [ { template = "https://search.nixos.org/options?type=options&query={searchTerms}"; } ];
+            urls = [ { template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}"; } ];
             iconMapObj."16" = "https://search.nixos.org/favicon.png";
           };
           mynixos = {

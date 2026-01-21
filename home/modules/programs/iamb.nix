@@ -1,14 +1,8 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, ... }:
 
 {
   programs.iamb = {
     enable = true;
-    package = inputs.iamb.packages.${pkgs.stdenv.system}.default;
 
     settings = {
       profiles.user.user_id = "@koi:system72.dev";

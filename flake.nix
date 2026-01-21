@@ -2,12 +2,11 @@
   description = "my nixos dotfiles :3";
 
   inputs = {
-    nixpkgs.url = "https://channels.nixos.org/nixos-25.11/nixexprs.tar.xz";
-    # nixpkgs-unstable.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     systems.url = "github:nix-systems/default";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -23,14 +22,8 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
-      # inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
-    };
-
-    iamb = {
-      url = "github:ulyssa/iamb/v0.0.11-alpha.1";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser = {
