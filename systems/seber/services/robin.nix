@@ -1,3 +1,5 @@
+{ lib, config, ... }:
+
 let
   tls = {
     forceSSL = true;
@@ -11,18 +13,12 @@ in
   users = {
     groups.robin = { };
     users.robin = {
-      group = "robin";
-      home = "/var/robin";
-      createHome = false;
-      isNormalUser = true;
-      hashedPassword = "!";
-      openssh.authorizedKeys.keys = [
+      hashedPassword = lib.mkForce "!";
+      openssh.authorizedKeys.keys = lib.mkForce [
         "no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDeSHaoF0Qs1G8JO/enOo2vxzkvvOqAMZPG2DX7TgG8u"
       ];
     };
   };
-
-  systemd.tmpfiles.rules = [ "d /var/robin 2755 robin robin -" ];
 
   systemd.user.services.maivi = {
     description = "maivi :3";
@@ -31,7 +27,7 @@ in
 
     unitConfig.ConditionUser = "robin";
     serviceConfig = {
-      ExecStart = "/var/robin/maivi";
+      ExecStart = "${config.users.users.robin.home}/maivi";
       Restart = "on-failure";
       RestartSec = 20;
     };
