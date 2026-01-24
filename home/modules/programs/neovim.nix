@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  inputs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 
 {
   imports = [ inputs.anvim.homeManagerModules.default ];
