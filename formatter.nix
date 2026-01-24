@@ -1,8 +1,14 @@
-{ pkgs }:
+{
+  treefmt,
+  nixfmt,
+  js-beautify,
+  shfmt,
+  kdePackages,
+}:
 
-pkgs.treefmt.withConfig {
-  runtimeInputs = with pkgs; [
-    nixfmt-rfc-style
+treefmt.withConfig {
+  runtimeInputs = [
+    nixfmt
     js-beautify
     shfmt
     kdePackages.qtdeclarative

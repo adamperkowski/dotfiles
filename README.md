@@ -15,7 +15,7 @@
 
 <div align="center">
 
-![preview](./doc/preview.webp)
+![preview](./preview.webp)
 
 <img
   width="496"
