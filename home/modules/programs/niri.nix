@@ -1,3 +1,7 @@
+{ inputs, config, ... }:
+let
+  colors = inputs.evergarden.lib.util.mkPalette config.evergarden;
+in
 {
   services.gnome-keyring.enable = false;
 
@@ -17,7 +21,7 @@
     prefer-no-csd = true;
 
     cursor = {
-      theme = "catppuccin-mocha-dark-cursors";
+      theme = "Qogir";
       size = 24;
     };
 
@@ -71,9 +75,9 @@
       border = {
         enable = true;
         width = 2;
-        active.color = "#cbe3b3";
-        inactive.color = "#2B3337";
-        urgent.color = "#f5d098";
+        active.color = "#${colors.accent}";
+        inactive.color = "#${colors.surface0}";
+        urgent.color = "#${colors.yellow}";
       };
     };
 

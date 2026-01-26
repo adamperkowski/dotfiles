@@ -1,8 +1,14 @@
-{ pkgs, ... }:
-
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+let
+  colors = inputs.evergarden.lib.util.mkPalette config.evergarden;
+in
 {
   home.packages = with pkgs; [ libnotify ];
-
   services.dunst = {
     enable = true;
     settings = {
@@ -13,27 +19,27 @@
         offset = "(0,0)";
         font = "Maple Mono NF 10";
 
-        background = "#232a2e";
-        foreground = "#f8f9e8";
-        frame_color = "#cbe3b3";
+        background = "#${colors.base}";
+        foreground = "#${colors.text}";
+        frame_color = "#${colors.accent}";
         separator_color = "frame";
-        highlight = "#f5d098";
+        highlight = "#${colors.yellow}";
       };
 
       urgency_low = {
-        background = "#232a2e";
-        foreground = "#f8f9e8";
+        background = "#${colors.base}";
+        foreground = "#${colors.text}";
       };
 
       urgency_normal = {
-        background = "#232a2e";
-        foreground = "#f8f9e8";
+        background = "#${colors.base}";
+        foreground = "#${colors.text}";
       };
 
       urgency_critical = {
-        background = "#232a2e";
-        foreground = "#f8f9e8";
-        frame_color = "#f57f82";
+        background = "#${colors.base}";
+        foreground = "#${colors.text}";
+        frame_color = "#${colors.red}";
       };
     };
   };

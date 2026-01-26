@@ -51,7 +51,7 @@
         "zen.glance.enabled" = false;
         "zen.tabs.show-newtab-vertical" = false;
         "zen.welcome-screen.seen" = true;
-        "zen.urlbar.behavior" = "float";
+        "zen.urlbar.behavior" = "floating-on-type";
         "zen.view.use-single-toolbar" = false;
         "zen.view.sidebar-expanded" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;

@@ -87,6 +87,24 @@
         "type": "github"
       }
     },
+    "evergarden": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769456525,
+        "narHash": "sha256-2l7ZQpNNFjKM9UCdJtiLGTgmOTKQwePndy+B1VTkan8=",
+        "rev": "7f48df5c928138fb055696bad792602b18efae0a",
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/evergarden/nix/archive/7f48df5c928138fb055696bad792602b18efae0a.tar.gz?rev=7f48df5c928138fb055696bad792602b18efae0a"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://codeberg.org/evergarden/nix/archive/main.tar.gz"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -267,6 +285,7 @@
         "agenix": "agenix",
         "anvim": "anvim",
         "cuteff": "cuteff",
+        "evergarden": "evergarden",
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",

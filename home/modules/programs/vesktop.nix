@@ -1,15 +1,21 @@
+{ inputs, config, ... }:
+let
+  colors = inputs.evergarden.lib.util.mkPalette config.evergarden;
+in
 {
   programs.vesktop = {
     enable = true;
     settings = {
       arRPC = true;
-      splashBackground = "#232a2e";
-      splashColor = "#f8f9e8";
+      splashBackground = "#${colors.base}";
+      splashColor = "#${colors.text}";
       splashTheming = true;
     };
     vencord.settings = {
       useQuickCss = true;
-      themeLinks = [ "https://everviolet.github.io/discord/themes/evergarden-fall-green.theme.css" ];
+      themeLinks = [
+        "https://everviolet.github.io/discord/themes/evergarden-${config.evergarden.variant}-${config.evergarden.accent}.theme.css"
+      ];
       plugins = {
         AlwaysExpandRoles.enabled = true;
         AlwaysTrust = {

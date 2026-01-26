@@ -1,19 +1,25 @@
 { pkgs, ... }:
-
 {
-  home.packages = with pkgs; [
-    catppuccin-papirus-folders
-    magnetic-catppuccin-gtk
-    catppuccin-cursors.mochaDark
-  ];
+  evergarden.adwaita.enable = true;
 
   gtk = {
     enable = true;
-    theme.name = "Catppuccin-GTK-Dark";
-    iconTheme.name = "Papirus-Dark";
-    cursorTheme = {
-      name = "catppuccin-mocha-dark-cursors";
-      size = 24;
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    name = "Qogir";
+    package = pkgs.qogir-icon-theme;
+    size = 24;
+    gtk.enable = true;
+    x11.enable = false;
   };
 }

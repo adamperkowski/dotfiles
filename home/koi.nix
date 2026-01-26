@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   home = {
     username = "koi";
@@ -13,5 +14,13 @@
     ./modules/packages.nix
     ./modules/wallpaper.nix
     ./modules/programs
+
+    inputs.evergarden.homeManagerModules.default
   ];
+
+  evergarden = {
+    enable = false;
+    variant = "fall";
+    accent = "green";
+  };
 }

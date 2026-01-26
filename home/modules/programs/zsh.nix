@@ -60,9 +60,9 @@ in
     };
 
     initContent = ''
-      ${builtins.readFile (external + "/keymap.zsh")}
-      ${builtins.readFile (external + "/prompt.zsh")}
-      ${builtins.readFile (external + "/functions.zsh")}
+      source ${external}/keymap.zsh
+      source ${external}/prompt.zsh
+      source ${external}/functions.zsh
 
       export GPG_TTY=$(tty)
       source <(fzf --zsh)
@@ -71,7 +71,7 @@ in
     '';
 
     profileExtra = ''
-      ${builtins.readFile (external + "/profile.zsh")}
+      source ${external}/profile.zsh
     '';
   };
 }
