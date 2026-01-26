@@ -14,6 +14,12 @@ local dim=$'\e[2m'
 local reset=$'\e[0m'
 local newline=$'\n'
 
+
+zstyle ':vcs_info:git*' hooks git-strip-heads
+function +vi-git-strip-heads() {
+  hook_com[branch]=${hook_com[branch]#heads/}
+}
+
 zstyle ':vcs_info:*' formats "${dim}%s( ${accent}%b${reset}${dim} )"
 zstyle ':vcs_info:*' actionformats "${dim}%s( ${accent}%b${reset} | ${accent}%a${reset}${dim} )"
 zstyle ':vcs_info:*' enable git
