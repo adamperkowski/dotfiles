@@ -38,6 +38,18 @@
           "init"
           "--colocate"
         ];
+        clone = [
+          "git"
+          "clone"
+          "--colocate"
+          "--fetch-tags=none"
+          "--branch"
+        ];
+        update = [
+          "bookmark"
+          "move"
+          "--to=first_parent(@)"
+        ];
       };
 
       templates = {
