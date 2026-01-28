@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769456525,
-        "narHash": "sha256-2l7ZQpNNFjKM9UCdJtiLGTgmOTKQwePndy+B1VTkan8=",
-        "rev": "7f48df5c928138fb055696bad792602b18efae0a",
+        "lastModified": 1769625148,
+        "narHash": "sha256-l0DSiUHZ2Qkg9TAQAHYCT9zmFJzZbYYZfbWbPN+8iwY=",
+        "rev": "6a93212882e30ad7b7e19d8b04da92009f13ddcb",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/evergarden/nix/archive/7f48df5c928138fb055696bad792602b18efae0a.tar.gz?rev=7f48df5c928138fb055696bad792602b18efae0a"
+        "url": "https://codeberg.org/api/v1/repos/evergarden/nix/archive/6a93212882e30ad7b7e19d8b04da92009f13ddcb.tar.gz?rev=6a93212882e30ad7b7e19d8b04da92009f13ddcb"
       },
       "original": {
         "type": "tarball",

@@ -7,6 +7,7 @@
     inputs.niri.nixosModules.niri
     ../home.nix
 
+    ./boot.nix
     ./console.nix
     ./nixpkgs.nix
     ./environment.nix
