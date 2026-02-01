@@ -59,6 +59,13 @@
         "layout.css.prefers-color-scheme.content-override" = 0; # dark mode
       };
       userChrome = builtins.readFile ../../../external/userChrome.css;
+      keyboardShortcutsVersion = 14;
+      keyboardShortcuts = [
+        {
+          id = "addBookmarkAsKb";
+          disabled = true;
+        }
+      ];
     };
 
     policies =

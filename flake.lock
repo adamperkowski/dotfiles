@@ -36,11 +36,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769944785,
-        "narHash": "sha256-KFVJlhAaf8O/n4EKWqgc0nmDFVQOe0HSAdhYyD5Tim8=",
-        "rev": "063a564414af729bd8df75e88725f2afc9b2ceac",
+        "lastModified": 1769958346,
+        "narHash": "sha256-RaHvTKbd8bB7rPZXld1MWZGlYzwua+aijAsTjcenJEo=",
+        "rev": "755bb5a25194ca30230cfb4daee77deeddbc4cd6",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/koibtw/anvim/archive/063a564414af729bd8df75e88725f2afc9b2ceac.tar.gz?rev=063a564414af729bd8df75e88725f2afc9b2ceac"
+        "url": "https://codeberg.org/api/v1/repos/koibtw/anvim/archive/755bb5a25194ca30230cfb4daee77deeddbc4cd6.tar.gz?rev=755bb5a25194ca30230cfb4daee77deeddbc4cd6"
       },
       "original": {
         "type": "tarball",
